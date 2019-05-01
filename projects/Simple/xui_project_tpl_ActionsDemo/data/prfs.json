@@ -1,0 +1,35 @@
+{
+    "ctl_panel28" : {
+        "properties" : {
+            "dock" : "fill",
+            "caption" : "Page - XUIPage2 fill"
+        },
+        "CS":{
+            "PANEL":"background-color:#cdcdcd;"
+        }
+    },
+    "ctl_scheckbox3" : {
+        "properties" : {
+            "left" : 12,
+            "caption" : "CheckBox 1"
+        }
+    },"ctl_input6" : {
+        "properties" : {
+            "left" : 12,
+            "type":"comboBox",
+            "value":"comboBox"
+        }
+    },"ctl_list2" : {
+        "properties" : {
+            "left" : 152,
+            "top" : 12,
+            "width" : 150
+        }
+    },"ctl_button3" : {
+        "properties" : {
+            "left" : 12,
+            "width" : 120,
+            "caption" : "Button 1"
+        }
+    }
+}

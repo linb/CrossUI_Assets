@@ -1,0 +1,19 @@
+{
+  "main": "index.html",
+  "name": "CrossUI Application",
+  "description": "Devolop Once, Deploy Everywhere",
+  "version": "2",
+  "chromium-args" : "--disable-direct-write --disable-direct-write-for-ui --allow-file-access-from-files",
+  "window": {
+    "title": "CrossUI Application",
+    "icon":"logo256.png",
+    "width": 1024,
+    "height": 900,
+    "position": "center",
+    "min_width": 800,
+    "min_height": 600,
+    "fullscreen": false,
+    "resizable": true,
+    "frame":true
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "ctl_panel12" : {
+        "caption" : "Data & Values 2"
+    },"ctl_scheckbox3" : {
+        "value" : true,
+        "caption" : "CheckBox 2"
+    },"ctl_input6" : {
+        "value" : "input 2"
+    },"ctl_list2" : {
+        "items" : [{
+            "id" : "a",
+            "caption" : "a a"
+        },{
+            "id" : "b",
+            "caption" : "b b"
+        },{
+            "id" : "c",
+            "caption" : "c c"
+        },{
+            "id" : "d",
+            "caption" : "d d"
+        }],
+        "value" : "c"
+    },"ctl_button3" : {
+        "value" : true,
+        "caption" : "Button 2"
+    } 
+}
