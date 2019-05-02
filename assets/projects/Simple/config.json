@@ -1,0 +1,19 @@
+﻿{list:[{
+	id:'xui_project_tpl_Empty',
+	caption:{
+		en:'Empty',
+		cn:'空白工程'
+	}
+},{
+	id:'xui_project_tpl_ClassicLayout',
+	caption:{
+		en:'Classic Layout',
+		cn:'空白布局'
+	}
+},{
+	id:'xui_project_tpl_ActionsDemo',
+	caption:{
+		en:'UI Interaction Demo',
+		cn:'界面互动案例'
+	}
+}]}

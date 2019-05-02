@@ -1,0 +1,42 @@
+﻿{list:[{
+	id:'Simple',
+	caption:{
+		cn:'简单应用'
+	}
+}
+,{
+	id:'Charts',
+	caption:{
+		cn:'图表应用'
+	}
+},{
+	id:'Themes',
+	caption:{
+		cn:'主题应用'
+	}
+}
+,{
+	id:'Media',
+	caption:{
+		cn:'媒体应用'
+	}
+}
+,{
+	id:'Prototyping',
+	caption:{
+		cn:'快速原型开发'
+	}
+}
+,{
+	id:'DataInteraction',
+	caption:{
+	  en:'Data Interaction',
+		cn:'数据库互动'
+	}
+},{
+	id:'Mobile',
+	caption:{
+	  en:'Mobile',
+		cn:'手机应用'
+	}
+}]}

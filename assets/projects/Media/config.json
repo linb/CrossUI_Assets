@@ -1,0 +1,13 @@
+﻿{list:[{
+	id:'xui_project_tpl_AnimalSounds',
+	caption:{
+		en:'Animal sounds',
+		cn:'动物叫声'
+	}
+},{
+	id:'xui_project_tpl_Videos',
+	caption:{
+		en:'Videos',
+		cn:'视频播放'
+	}
+}]}

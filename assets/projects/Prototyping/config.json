@@ -1,0 +1,19 @@
+﻿{list:[{
+	id:'xui_project_tpl_AddressBook',
+	caption:{
+		en:'Address Book',
+		cn:'手机地址簿'
+	}
+},{
+	id:'xui_project_tpl_ASurvey',
+	caption:{
+		en:'A Survey',
+		cn:'小调查'
+	}
+},{
+	id:'xui_project_tpl_Dashboard',
+	caption:{
+		en:'Dashboard',
+		cn:'仪表板'
+	}
+}]}
