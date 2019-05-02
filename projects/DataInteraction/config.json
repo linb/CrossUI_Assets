@@ -1,0 +1,19 @@
+﻿{list:[{
+	id:'xui_project_tpl_LoadData',
+	caption:{
+		en:'Load Data',
+		cn:'加载数据文件'
+	}
+},{
+	id:'xui_project_tpl_CRUD',
+	caption:{
+		en:'CRUD',
+		cn:'基本数据库操作'
+	}
+},{
+	id:'xui_project_tpl_OrderManagement',
+	caption:{
+		en:'Order Management',
+		cn:'订单管理'
+	}
+}]}

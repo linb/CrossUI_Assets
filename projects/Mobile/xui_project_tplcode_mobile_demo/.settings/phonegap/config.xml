@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.crossui.demo"
+        versionCode = "10"
+        version   = "2.0">
+    <name>CrossUI App</name>
+
+    <description>
+        CrossUI application.
+    </description>
+
+    <author href="http://crossui.com" email="support@crossui.com">
+        CrossUI Team
+    </author>
+</widget>

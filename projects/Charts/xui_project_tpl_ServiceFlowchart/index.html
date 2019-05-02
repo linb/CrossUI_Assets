@@ -25,30 +25,9 @@ width=device-width, height=device-height" />
 </body>
 </html>
 
-<script type="text/javascript">
-    if(/#.*touch\=(1|true)/.test(location.href)){
-        window.xui_ini={fakeTouch:1};
-        document.body.className +=" xui-cursor-touch";
-    }
-</script>
-<script type="text/javascript" src="//www.crossui.com/libs/2.0/js/xui-debug.js"></script>
-
+<script type="text/javascript" src="//www.crossui.com/libs/2.0/js/xui-all.js"></script>
 <script type="text/javascript" src="xuiconf.js"></script>
 <script type="text/javascript">
-    var args = xui.getUrlParams(),
-          onEnd = function(){xui('loading').remove();};
-    if(args&&args.ficdn){
-      xui.ini.$FontIconsCDN=args.ficdn;
-    }
-    if(args&&args.cls){
-        xui.launch(args.cls, onEnd, args && args.lang||'', args && args.theme||'default');
-        document.title += " [" + args.cls + "]";
-    }else{
-        xui.launch('App/js/index.js', onEnd, args && args.lang||'', args && args.theme||'default');
-    }
-    /*
-    window.onerror = function(sMsg,sUrl,sLine){
-        alert('>>' + sMsg+' at File: '+ sUrl + ' ( line ' + sLine + ' ).');
-    }
-    */
+    if(typeof(xui)!=="undefined") xui.launch(xui.getUrlParams().cls||'App/js/index.js', function(){xui('loading').remove()});
+    else document.write("Can not find CrossUI library, please check it!");
 </script>

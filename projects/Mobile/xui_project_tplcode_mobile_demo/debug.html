@@ -15,16 +15,44 @@ width=device-width, height=device-height" />
         <meta http-equiv="cache-control" content="no-cache">
         <meta http-equiv="content-type" content="no-cache, must-revalidate" />
         <meta http-equiv="expires" content="-1"/>
+        <style type="text/css">
+            @keyframes amf{
+                0%{opacity:.3;}
+                60%{opacity:1;}
+                100%{opacity:.3;}
+            }
+           @-moz-keyframes amf{
+                0%{opacity:.3;}
+                60%{opacity:1;}
+                100%{opacity:.3;}
+            }
+            @-webkit-keyframes amf{
+                0%{opacity:.3;}
+                60%{opacity:1;}
+                100%{opacity:.3;}
+            }
+            @-o-keyframes  amf{
+                0%{opacity:.3;}
+                60%{opacity:1;}
+                100%{opacity:.3;}
+            }
+            #loadingimg {
+                opacity:.3;
+                animation:amf 2s  linear infinite;
+                -moz-animation:amf 2s  linear infinite;
+                -webkit-animation:amf 2s  linear infinite;
+                -o-animation:amf 2s  linear infinite;
+            }     
+        </style>    
         <!--link rel="stylesheet" type="text/css" href="CSS/default.css" /-->
         <title>Powered by CrossUI Front-End Builder</title>
 </head>
 <body>
-      <div id="loading" style="position:fixed;width:100%;text-align:center;">
-          <img id="loadingimg" alt="Loading..." title="Loading..." src="//www.crossui.com/libs/2.0/loading.gif" />
-      </div>
+    <div id="loading" style="position:fixed;width:100%;text-align:center;">
+        <img id="loadingimg" alt="Loading..." title="Loading..." src="img/logo.png" />
+    </div>
 </body>
 </html>
-
 <script type="text/javascript">
     if(/#.*touch\=(1|true)/.test(location.href)){
         window.xui_ini={fakeTouch:1};
@@ -32,7 +60,6 @@ width=device-width, height=device-height" />
     }
 </script>
 <script type="text/javascript" src="//www.crossui.com/libs/2.0/js/xui-debug.js"></script>
-
 <script type="text/javascript" src="xuiconf.js"></script>
 <script type="text/javascript">
     var args = xui.getUrlParams(),
@@ -46,9 +73,4 @@ width=device-width, height=device-height" />
     }else{
         xui.launch('App/js/index.js', onEnd, args && args.lang||'', args && args.theme||'default');
     }
-    /*
-    window.onerror = function(sMsg,sUrl,sLine){
-        alert('>>' + sMsg+' at File: '+ sUrl + ' ( line ' + sLine + ' ).');
-    }
-    */
 </script>
