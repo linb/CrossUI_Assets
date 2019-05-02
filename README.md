@@ -1,2 +1,2 @@
 # CrossUI_Templates
-This is templates repo for CrossUI
+This is the templates repo for CrossUI
