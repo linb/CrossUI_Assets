@@ -1,0 +1,7 @@
+﻿{list:[{
+	id:'xui_page_tpl_TreeGridPaging',
+	caption:{
+		en:'Paging',
+		cn:'列表分页'
+	}
+}]}

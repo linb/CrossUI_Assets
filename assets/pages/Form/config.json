@@ -1,0 +1,98 @@
+﻿{list:[{
+	id:'xui_page_tpl_Div',
+	caption:{
+		en:'Div',
+		cn:'Div'
+	}
+},{
+	id:'xui_page_tpl_Simple',
+	caption:{
+		en:'Simple Controls',
+		cn:'简单控件'
+	}
+},{
+	id:'xui_page_tpl_Label',
+	caption:{
+		en:'Label',
+		cn:'文字标签'
+	}
+},{
+	id:'xui_page_tpl_Button',
+	caption:{
+		en:'Button',
+		cn:'命令按钮'
+	}
+},{
+	id:'xui_page_tpl_CheckBox',
+	caption:{
+		en:'CheckBox',
+		cn:'复选框'
+	}
+},{
+	id:'xui_page_tpl_Input',
+	caption:{
+		en:'Input',
+		cn:'文本框'
+	}
+},{
+	id:'xui_page_tpl_List',
+	caption:{
+		en:'List',
+		cn:'列表框'
+	}
+},{
+	id:'xui_page_tpl_ComboInput',
+	caption:{
+		en:'ComboInput',
+		cn:'组合输入框'
+	}
+},{
+	id:'xui_page_tpl_RichEditor',
+	caption:{
+		en:'RichEditor',
+		cn:'富文本框'
+	}
+},{
+	id:'xui_page_tpl_ProgressBar',
+	caption:{
+		en:'ProgressBar',
+		cn:'进度条'
+	}
+},{
+	id:'xui_page_tpl_Slider',
+	caption:{
+		en:'Slider',
+		cn:'滑动条'
+	}
+},{
+	id:'xui_page_tpl_Picker',
+	caption:{
+		en:'Picker',
+		cn:'时间和颜色选择器'
+	}
+},{
+	id:'xui_page_tpl_Radio',
+	caption:{
+		en:'Radio Box',
+		cn:'单选和多选框'
+	}
+},{
+	id:'xui_page_tpl_StatusButton',
+	caption:{
+		en:'StatusButton',
+		cn:'状态按钮'
+	}
+},{
+	id:'xui_page_tpl_Group',
+	caption:{
+		en:'Group',
+		cn:'组控件'
+	}
+},
+{
+	id:'xui_page_tpl_Serialize',
+	caption:{
+		en:'Serialize',
+		cn:'序列化'
+	}
+}]}

@@ -1,0 +1,31 @@
+﻿{list:[{
+	id:'xui_page_tpl_Simple',
+	caption:{
+		en:'Simple Container',
+		cn:'简单容器'
+	}
+},{
+	id:'xui_page_tpl_Layout',
+	caption:{
+		en:'Layout',
+		cn:'布局容器'
+	}
+},{
+	id:'xui_page_tpl_Tabs',
+	caption:{
+		en:'Tabs',
+		cn:'标签页容器'
+	}
+},{
+	id:'xui_page_tpl_Stacks',
+	caption:{
+		en:'Stacks',
+		cn:'堆积页容器'
+	}
+},{
+	id:'xui_page_tpl_ButtonViews',
+	caption:{
+		en:'ButtonViews',
+		cn:'按钮栏容器'
+	}
+}]}

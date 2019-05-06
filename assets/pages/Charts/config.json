@@ -1,0 +1,13 @@
+﻿{list:[{
+	id:'xui_page_tpl_Charts',
+	caption:{
+		en:'Charts',
+		cn:'图表控件'
+	}
+},{
+	id:'xui_page_tpl_SalesSummery',
+	caption:{
+		en:'SalesSummery',
+		cn:'销量总结'
+	}
+}]}

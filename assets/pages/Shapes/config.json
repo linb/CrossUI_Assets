@@ -1,0 +1,13 @@
+﻿{list:[{
+	id:'xui_page_tpl_Basic',
+	caption:{
+		en:'Basic shapes',
+		cn:'基本形状'
+	}
+},{
+	id:'xui_page_tpl_FollowCharting',
+	caption:{
+		en:'Follow Charting',
+		cn:'流程图'
+	}
+}]}

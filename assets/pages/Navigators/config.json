@@ -1,0 +1,31 @@
+﻿{list:[{
+	id:'xui_page_tpl_PageBar',
+	caption:{
+		en:'Page Bar',
+		cn:'页面导航'
+	}
+},{
+	id:'xui_page_tpl_Menu',
+	caption:{
+		en:'MenuBar',
+		cn:'菜单'
+	}
+},{
+	id:'xui_page_tpl_Gallery',
+	caption:{
+		en:'Gallery',
+		cn:'画廊'
+	}
+},{
+	id:'xui_page_tpl_TreeView',
+	caption:{
+		en:'TreeView',
+		cn:'树状列表'
+	}
+},{
+	id:'xui_page_tpl_TreeGrid',
+	caption:{
+		en:'TreeGrid',
+		cn:'树状表格'
+	}
+}]}

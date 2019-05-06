@@ -1,0 +1,52 @@
+﻿{list:[{
+	id:'Layout',
+	caption:{
+		cn:'布局控件'
+	}
+},
+{
+	id:'Form',
+	caption:{
+		en:'Form Elements',
+		cn:'表单控件'
+	}
+},
+{
+	id:'Containers',
+	caption:{
+		en:'Containers',
+		cn:'容器控件'
+	}
+},{
+	id:'Navigators',
+	caption:{
+		cn:'导航控件'
+	}
+},{
+	id:'Shapes',
+	caption:{
+		cn:'形状控件'
+	}
+},{
+	id:'Charts',
+	caption:{
+		cn:'图表控件'
+	}
+},{
+	id:'Binders',
+	caption:{
+		cn:'绑定控件'
+	}
+},{
+	id:'Grid',
+	caption:{
+		en:'Grid Cases',
+		cn:'表格案例'
+	}
+},{
+	id:'Charts',
+	caption:{
+		en:'Charts Cases',
+		cn:'图表案例'
+	}
+}]}

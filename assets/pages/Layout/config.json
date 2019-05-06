@@ -1,0 +1,55 @@
+﻿{list:[{
+	id:'xui_page_tpl_ColumnsNone',
+	caption:{
+		en:'None',
+		cn:'一栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsLM',
+	caption:{
+		en:'Left Middle',
+		cn:'左中两栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsMR',
+	caption:{
+		en:'Middle Right',
+		cn:'中右两栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsLMR',
+	caption:{
+		en:'Left Middle Right',
+		cn:'左中右三栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsTM',
+	caption:{
+		en:'Top Middle',
+		cn:'上中两栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsMB',
+	caption:{
+		en:'Middle Bottom',
+		cn:'中下两栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsTMB',
+	caption:{
+		en:'Top Middle Bottom',
+		cn:'上中下三栏'
+	}
+},{
+	id:'xui_page_tpl_ColumnsMixed',
+	caption:{
+		en:'Mixed',
+		cn:'混合布局'
+	}/*,
+	detail:true,
+	prop:{
+		charged:true,
+		price:1,
+		pricetitle:'USD 1'
+	}*/
+}]}

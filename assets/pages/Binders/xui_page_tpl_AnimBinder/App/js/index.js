@@ -1,0 +1,145 @@
+xui.Class('App', 'xui.Module',{
+    Instance:{
+        iniComponents : function(){
+            // [[Code created by CrossUI RAD Studio
+            var host=this, children=[], append=function(child){children.push(child.get(0));};
+            
+            append(
+                xui.create("xui.AnimBinder")
+                .setHost(host,"ani_1")
+                .setName("ani_1")
+                .setFrames([
+                    {
+                        "status":{ }
+                    },
+                    {
+                        "status":{
+                            "rotate":"270deg"
+                        },
+                        "type":"liner",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "left":"30em"
+                        },
+                        "type":"sineOut",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "top":"30em",
+                            "left":"30em"
+                        },
+                        "type":"cubicOut",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "top":"30em",
+                            "left":"5em"
+                        },
+                        "type":"quartOut",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "left":"5em",
+                            "top":"5em"
+                        },
+                        "type":"quintIn",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "left":"5em",
+                            "top":"5em",
+                            "width":"8em",
+                            "height":"8em"
+                        },
+                        "type":"liner",
+                        "times":1,
+                        "duration":500,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "left":"5em",
+                            "top":"5em",
+                            "width":"8em",
+                            "height":"8em",
+                            "skewX":"30deg",
+                            "skewY":"30deg"
+                        },
+                        "type":"liner",
+                        "times":1,
+                        "duration":1000,
+                        "restore":false
+                    },
+                    {
+                        "status":{
+                            "left":"5em",
+                            "top":"5em",
+                            "width":"6em",
+                            "height":"6em",
+                            "skewX":"0deg",
+                            "skewY":"0deg",
+                            "rotate":"0deg"
+                        },
+                        "type":"liner",
+                        "times":1,
+                        "duration":1000,
+                        "restore":false
+                    }
+                ])
+            );
+            
+            append(
+                xui.create("xui.UI.HTMLButton")
+                .setHost(host,"xui_ui_htmlbutton1")
+                .setLeft("15em")
+                .setTop("14.166666666666666em")
+                .setHtml("Play Animation")
+                .onClick([
+                    {
+                        "desc":"动作 1",
+                        "type":"control",
+                        "target":"ani_1",
+                        "args":[
+                            "{page.ani_1.apply()}",
+                            undefined,
+                            undefined,
+                            "{page.xui_ui_image3}"
+                        ],
+                        "method":"apply",
+                        "redirection":"other:callback:call",
+                        "event":1
+                    }
+                ])
+            );
+            
+            append(
+                xui.create("xui.UI.Image")
+                .setHost(host,"xui_ui_image3")
+                .setLeft("5em")
+                .setTop("5em")
+                .setWidth("6em")
+                .setHeight("6em")
+                .setSrc("{xui.ini.img_pic}")
+            );
+            
+            return children;
+            // ]]Code created by CrossUI RAD Studio
+        }
+    }
+});

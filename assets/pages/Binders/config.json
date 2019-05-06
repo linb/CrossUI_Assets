@@ -1,0 +1,37 @@
+﻿{list:[{
+	id:'xui_page_tpl_Timer',
+	caption:{
+		en:'Timer',
+		cn:'定时器'
+	}
+},{
+	id:'xui_page_tpl_AnimBinder',
+	caption:{
+		en:'Animation Binder',
+		cn:'动画绑定'
+	}
+},{
+	id:'xui_page_tpl_Style',
+	caption:{
+		en:'Style Box',
+		cn:'样式盒'
+	}
+},{
+	id:'xui_page_tpl_DataBinder',
+	caption:{
+		en:'Data Binder',
+		cn:'数据绑定'
+	}
+},{
+	id:'xui_page_tpl_MessageService',
+	caption:{
+		en:'Message Service',
+		cn:'消息服务'
+	}
+},{
+	id:'xui_page_tpl_API',
+	caption:{
+		en:'API',
+		cn:'远程调用器具'
+	}
+}]}
