@@ -49,4 +49,10 @@
 		en:'Charts Cases',
 		cn:'图表案例'
 	}
+},{
+  id:'Diagrams',
+	caption:{
+		en:'Diagrams',
+		cn:'图形案例'
+	}
 }]}
