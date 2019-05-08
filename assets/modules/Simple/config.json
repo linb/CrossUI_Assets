@@ -1,7 +1,7 @@
 ﻿{list:[{
-	id:'xui_page_tpl_StaffCard',
+	id:'xui_module_tpl_StaffCard',
 	caption:{
-		en:'StaffCard',
+		en:'Staff Card',
 		cn:'员工卡片'
 	}
 }]}
