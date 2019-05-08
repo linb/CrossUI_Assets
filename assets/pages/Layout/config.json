@@ -1,4 +1,5 @@
-﻿{list:[{
+﻿{list:[
+{
 	id:'xui_page_tpl_ColumnsNone',
 	caption:{
 		en:'None',
@@ -45,16 +46,19 @@
 	caption:{
 		en:'Mixed',
 		cn:'混合布局'
-	},{
+	}
+},{
 	id:'xui_page_tpl_FormLayout',
 	caption:{
 		en:'Form Layout',
 		cn:'表单布局'
-	}/*,
+	}
+}/*,
 	detail:true,
 	prop:{
 		charged:true,
 		price:1,
 		pricetitle:'USD 1'
-	}*/
-}]}
+	}
+}*/
+]}
