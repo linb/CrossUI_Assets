@@ -91,6 +91,8 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.UI.Gallery")
                 .setHost(host,"xui_ui_gallery7")
                 .setDirtyMark(false)
+                .setImgWidth('auto')
+                .setImgHeight('auto')
                 .setItems([
                     {
                         "id":"ad",
