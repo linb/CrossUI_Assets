@@ -67,9 +67,9 @@ This is the templates repo for CrossUI
 			* [MonthlySales](https://linb.github.io/CrossUI_Assets/assets/projects/Charts/xui_project_tpl_MonthlySales/index.html)<br>
 			* [ServiceFlowchart](https://linb.github.io/CrossUI_Assets/assets/projects/Charts/xui_project_tpl_ServiceFlowchart/index.html)<br>
 		* DataInteraction<br>
-			* [CRUD](https://crossui.com/demo/CRUD/index.html)<br>
 			* [LoadData](https://linb.github.io/CrossUI_Assets/assets/projects/DataInteraction/xui_project_tpl_LoadData/index.html)<br>
-			* [OrderManagement](https://crossui.com/demo/OrderManagement/index.html)<br>
+			* [CRUD](https://crossui.com/demo/CRUD/index.html) (php + mysql)<br>
+			* [OrderManagement](https://crossui.com/demo/OrderManagement/index.html) (php + mysql)<br>
 		* Media<br>
 			* [AnimalSounds](https://linb.github.io/CrossUI_Assets/assets/projects/Media/xui_project_tpl_AnimalSounds/index.html)<br>
 			* [Videos](https://linb.github.io/CrossUI_Assets/assets/projects/Media/xui_project_tpl_Videos/index.html)<br>
