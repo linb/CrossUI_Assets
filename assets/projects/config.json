@@ -33,10 +33,4 @@
 	  en:'Data Interaction',
 		cn:'数据库互动'
 	}
-},{
-	id:'Mobile',
-	caption:{
-	  en:'Mobile',
-		cn:'手机应用'
-	}
 }]}
