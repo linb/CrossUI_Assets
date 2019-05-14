@@ -1,19 +1,19 @@
 ﻿{list:[{
 	id:'xui_project_tpl_LoadData',
 	caption:{
-		en:'Load Data',
-		cn:'加载数据文件'
+		en:'Table Data',
+		cn:'表格数据'
 	}
 },{
 	id:'xui_project_tpl_CRUD',
 	caption:{
-		en:'CRUD',
-		cn:'基本数据库操作'
+		en:'CRUD  (PHP + MYSQL)',
+		cn:'基本数据库操作  (PHP + MYSQL)'
 	}
 },{
 	id:'xui_project_tpl_OrderManagement',
 	caption:{
-		en:'Order Management',
-		cn:'订单管理'
+		en:'Order Management (PHP + MYSQL)',
+		cn:'订单管理 (PHP + MYSQL)'
 	}
 }]}
