@@ -1,7 +1,7 @@
 ﻿{list:[{
-	id:'Simple',
+	id:'Basic',
 	caption:{
-		cn:'简单应用'
+		cn:'基本应用'
 	}
 }
 ,{
