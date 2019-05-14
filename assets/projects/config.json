@@ -1,6 +1,7 @@
 ﻿{list:[{
-	id:'Basic',
+	id:'Simple',
 	caption:{
+    en:'Basic',
 		cn:'基本应用'
 	}
 }
