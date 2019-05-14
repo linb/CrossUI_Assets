@@ -70,9 +70,6 @@ This is the templates repo for CrossUI
 			* [LoadData](https://linb.github.io/CrossUI_Assets/assets/projects/DataInteraction/xui_project_tpl_LoadData/index.html)<br>
 			* [CRUD](https://crossui.com/demo/CRUD/index.html) (php + mysql)<br>
 			* [OrderManagement](https://crossui.com/demo/OrderManagement/index.html) (php + mysql)<br>
-		* Media<br>
-			* [AnimalSounds](https://linb.github.io/CrossUI_Assets/assets/projects/Media/xui_project_tpl_AnimalSounds/index.html)<br>
-			* [Videos](https://linb.github.io/CrossUI_Assets/assets/projects/Media/xui_project_tpl_Videos/index.html)<br>
 		* Mobile<br>
 			* [mobile_demo](https://linb.github.io/CrossUI_Assets/assets/projects/Mobile/xui_project_tplcode_mobile_demo/index.html)<br>
 		* Prototyping<br>
@@ -80,9 +77,12 @@ This is the templates repo for CrossUI
 			* [ASurvey](https://linb.github.io/CrossUI_Assets/assets/projects/Prototyping/xui_project_tpl_ASurvey/index.html)<br>
 			* [DashBoard](https://linb.github.io/CrossUI_Assets/assets/projects/Prototyping/xui_project_tpl_DashBoard/index.html)<br>
 		* Simple<br>
-			* [ActionsDemo](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_ActionsDemo/index.html)<br>
+			* [Blank](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_Empty/index.html)<br>
 			* [ClassicLayout](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_ClassicLayout/index.html)<br>
-			* [Empty](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_Empty/index.html)<br>
+			* [ActionsDemo](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_ActionsDemo/index.html)<br>
+			* [AnimalSounds](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_AnimalSounds/index.html)<br>
+			* [Videos](https://linb.github.io/CrossUI_Assets/assets/projects/Simple/xui_project_tpl_Videos/index.html)<br>
+			
 		* Themes<br>
 			* [ControlTheme](https://linb.github.io/CrossUI_Assets/assets/projects/Themes/xui_project_tpl_ControlTheme/index.html)<br>
 			* [SandboxTheme](https://linb.github.io/CrossUI_Assets/assets/projects/Themes/xui_project_tpl_SandboxTheme/index.html)<br>
