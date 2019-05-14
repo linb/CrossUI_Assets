@@ -12,23 +12,6 @@
 	}
 }
 ,{
-	id:'Charts',
-	caption:{
-		cn:'图表应用'
-	}
-},{
-	id:'Themes',
-	caption:{
-		cn:'主题应用'
-	}
-}
-,{
-	id:'Media',
-	caption:{
-		cn:'媒体应用'
-	}
-}
-,{
 	id:'DataInteraction',
 	caption:{
 	  en:'Data Interaction',

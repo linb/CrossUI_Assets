@@ -28,4 +28,34 @@
 		en:'Video Player',
 		cn:'视频播放'
 	}
+},{
+	id:'xui_project_tpl_ControlTheme',
+	caption:{
+		en:'Control Theme',
+		cn:'控件主题'
+	}
+},{
+	id:'xui_project_tpl_SandboxTheme',
+	caption:{
+		en:'Sandbox Theme',
+		cn:'沙箱主题'
+	}
+},{
+	id:'xui_project_tpl_ThemeSwitching',
+	caption:{
+		en:'Theme Switching',
+		cn:'全局主题'
+	}
+},{
+	id:'xui_project_tpl_ServiceFlowchart',
+	caption:{
+		en:'Service Flowchart',
+		cn:'服务流程图'
+	}
+},{
+	id:'xui_project_tpl_MonthlySales',
+	caption:{
+		en:'Monthly Sales',
+		cn:'月销量图'
+	}
 }]}
