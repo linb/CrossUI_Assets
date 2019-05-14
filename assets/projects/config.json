@@ -5,6 +5,12 @@
 	}
 }
 ,{
+	id:'Prototyping',
+	caption:{
+		cn:'快速原型开发'
+	}
+}
+,{
 	id:'Charts',
 	caption:{
 		cn:'图表应用'
@@ -19,12 +25,6 @@
 	id:'Media',
 	caption:{
 		cn:'媒体应用'
-	}
-}
-,{
-	id:'Prototyping',
-	caption:{
-		cn:'快速原型开发'
 	}
 }
 ,{
