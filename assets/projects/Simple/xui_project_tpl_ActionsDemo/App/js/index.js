@@ -9,7 +9,7 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.APICaller")
                 .setHost(host,"api_1")
                 .setName("api_1")
-                .setQueryURL("http://www.crossui.com/xui/backend/PHP/demo.php")
+                .setQueryURL("https://www.crossui.com/xui/backend/PHP/demo.php")
                 .setQueryArgs({
                     "a":1,
                     "b":2
@@ -83,7 +83,6 @@ xui.Class('App', 'xui.Module',{
                             },
                             {
                                 "id":"node12",
-                                "image":"http://localhost/crossui.com/rad/img/demo.png",
                                 "sub":[
                                     {
                                         "id":"node13"
@@ -215,63 +214,28 @@ xui.Class('App', 'xui.Module',{
                                 "cells":[
                                     {
                                         "value":"sub1",
-                                        "disabled":"",
-                                        "readonly":"",
-                                        "imageDisplay":"",
-                                        "image":"http://localhost/crossui.com/xui/xui/bg.gif",
                                         "width":80,
-                                        "cellDisplay":"",
-                                        "cellCls":"xui-treegrid-cell-input",
                                         "type":"input",
-                                        "caption":"sub1",
-                                        "backgroundImage":"background-image:url(http://localhost/crossui.com/xui/xui/bg.gif);",
-                                        "backgroundPosition":"background-position:center;",
-                                        "backgroundRepeat":"background-repeat:no-repeat;"
+                                        "caption":"sub1"
                                     },
                                     {
                                         "value":"sub2",
-                                        "disabled":"",
-                                        "readonly":"",
-                                        "imageDisplay":"",
-                                        "image":"http://localhost/crossui.com/xui/xui/bg.gif",
                                         "width":80,
-                                        "cellDisplay":"",
-                                        "cellCls":"xui-treegrid-cell-input",
                                         "type":"input",
-                                        "caption":"sub2",
-                                        "backgroundImage":"background-image:url(http://localhost/crossui.com/xui/xui/bg.gif);",
-                                        "backgroundPosition":"background-position:center;",
-                                        "backgroundRepeat":"background-repeat:no-repeat;"
+                                        "caption":"sub2"
                                     },
                                     {
                                         "value":"sub3",
-                                        "disabled":"",
-                                        "readonly":"",
-                                        "imageDisplay":"",
-                                        "image":"http://localhost/crossui.com/xui/xui/bg.gif",
                                         "width":80,
-                                        "cellDisplay":"",
-                                        "cellCls":"xui-treegrid-cell-input",
                                         "type":"input",
-                                        "caption":"sub3",
-                                        "backgroundImage":"background-image:url(http://localhost/crossui.com/xui/xui/bg.gif);",
-                                        "backgroundPosition":"background-position:center;",
-                                        "backgroundRepeat":"background-repeat:no-repeat;"
+                                        "caption":"sub3"
                                     },
                                     {
                                         "value":"sub4",
-                                        "disabled":"",
-                                        "readonly":"",
-                                        "imageDisplay":"",
-                                        "image":"http://localhost/crossui.com/xui/xui/bg.gif",
                                         "width":80,
                                         "cellDisplay":"",
-                                        "cellCls":"xui-treegrid-cell-input",
                                         "type":"input",
-                                        "caption":"sub4",
-                                        "backgroundImage":"background-image:url(http://localhost/crossui.com/xui/xui/bg.gif);",
-                                        "backgroundPosition":"background-position:center;",
-                                        "backgroundRepeat":"background-repeat:no-repeat;"
+                                        "caption":"sub4"
                                     }
                                 ]
                             }
@@ -307,7 +271,7 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"url",
                         "params":[
-                            "http://www.google.com"
+                            "https://www.crossui.com"
                         ],
                         "method":"open--_self"
                     }
@@ -329,7 +293,7 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"url",
                         "params":[
-                            "http://www.google.com"
+                            "https://www.crossui.com"
                         ],
                         "method":"open--_blank"
                     }
@@ -2102,7 +2066,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("5.833333333333333em")
                 .setWidth("11.666666666666666em")
                 .setHeight("3.3333333333333335em")
-                .setSrc("http://www.crossui.com/img/logo.png")
+                .setSrc("https://www.crossui.com/img/logo.png")
                 , "main");
             
             host.ctl_pane39.append(
@@ -2110,10 +2074,10 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"ctl_slabel8")
                 .setSpaceUnit("px")
                 .setLeft("10px")
-                .setTop("20px")
+                .setTop("12px")
                 .setWidth("334px")
                 .setHeight("47px")
-                .setCaption("UI Interaction Test")
+                .setCaption("UI Interaction<br>Without Code")
                 .setHAlign("center")
                 .setCustomStyle({
                     "KEY":{
