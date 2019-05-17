@@ -1,8 +1,11 @@
 // 默认的代码是一个从 xui.Module 派生来的类
 // 要确保键值对的值不能包含外部引用
-// 子模块不支持 support Dependencies, Required, 以及异步函数和事件
+// 子模块不支持 Dependencies 异步函数和事件
 xui.Class('App', 'xui.Module',{
     Instance:{
+        // 需要的类或模块
+        Required:[],
+
         // 初始化属性
         properties : {},
 

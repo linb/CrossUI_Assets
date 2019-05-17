@@ -1,8 +1,10 @@
 // The default code is a module class (inherited from xui.Module)
 // Ensure that all the value of "key/value pair" does not refer to external variables
-// Sub module don't support Dependencies, Required, and those async functions
+// Sub module don't support Dependencies, and those async functions
 xui.Class('App', 'xui.Module',{
     Instance:{
+        // Required modules
+        Required:[],
         // To initialize properties
         properties : {},
 
