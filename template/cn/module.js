@@ -1,12 +1,8 @@
 // 默认的代码是一个从 xui.Module 派生来的类
 // 要确保键值对的值不能包含外部引用
+// 子模块不支持 support Dependencies, Required, 以及异步函数和事件
 xui.Class('App', 'xui.Module',{
     Instance:{
-        // 依赖的类
-        Dependencies:[],
-        // 需要的模块
-        Required:[],
-
         // 初始化属性
         properties : {},
 
@@ -23,16 +19,17 @@ xui.Class('App', 'xui.Module',{
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
-
-        // 可以自定义哪些界面控件将会被加到父容器中
-        customAppend : function(parent, subId, left, top){
-            // "return false" 表示默认情况下所有的第一层内部界面控件会被加入到父容器
-            return false;
-        },
-        // 属性影响本模块的部分
+         // 属性影响本模块的部分
         propSetAction : function(prop){
+        }
+    },
+    // export
+    Static:{
+        $DataModel:{
         },
-        // 本模块中所有xui dom节点的定制CSS style
-        customStyle:{}
+        $EventHandlers:{
+        },
+        $Functions:{
+        }
     }
 });

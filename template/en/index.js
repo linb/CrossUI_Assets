@@ -28,20 +28,11 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
-        }
-        /*,
+        },
         // To determine how properties affects this module
         propSetAction : function(prop){
         },
         // To set all node's style in this modlue
         customStyle:{}
-    },
-    //To customize the default properties and event handlers
-    Static:{
-        $DataModel:{
-        },
-        $EventHandlers:{
-        }
-    */
     }
 });

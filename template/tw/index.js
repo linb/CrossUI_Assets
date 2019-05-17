@@ -1,21 +1,21 @@
-// 默認的代碼是一個從xui.Module 派生來的類
-// 要確保鍵值對的值不能包含外部引用
+// The default code is a module class (inherited from xui.Module)
+// Ensure that all the value of "key/value pair" does not refer to external variables
 xui.Class('App', 'xui.Module',{
     Instance:{
-        // 依賴的類
+        // Dependency classes
         Dependencies:[],
-        // 需要的模塊
+        // Required modules
         Required:[],
 
-        // 初始化屬性
+        // To initialize properties
         properties : {},
 
-        //  初始化函數
+        // To initialize instance(e.g. properties)
         initialize : function(){
         },
 
-        // 初始化內部控件（通過界面編輯器生成的代碼，大部分是界面控件）
-        // *** 如果您不是非常熟悉XUI框架，請慎重手工改變本函數的代碼***
+        // To initialize internal components (mostly UI controls)
+        // *** If you're not a skilled, dont modify this function manually ***
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
@@ -24,24 +24,15 @@ xui.Class('App', 'xui.Module',{
             // ]]Code created by CrossUI RAD Studio
         },
 
-        // 可以自定義哪些界面控件將會被加到父容器中
+        // Give a chance to determine which UI controls will be appended to parent container
         customAppend : function(parent, subId, left, top){
-            // "return false" 表示默認情況下所有的第一層內部界面控件會被加入到父容器
+            // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
         },
-        /*,
-        // 屬性影響本模塊的部分
+        // To determine how properties affects this module
         propSetAction : function(prop){
         },
         // To set all node's style in this modlue
         customStyle:{}
-    },
-    // 制定義模塊的默認屬性和事件聲明
-    Static:{
-        $DataModel:{
-        },
-        $EventHandlers:{
-        }
-    */
     }
 });
