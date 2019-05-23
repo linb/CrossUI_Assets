@@ -939,7 +939,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","",true
+                            null,null,true
                         ],
                         "method":"insertItems"
                     },
@@ -954,7 +954,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"last"
                                 }
                             ],
-                            "","",false
+                            null,null,false
                         ],
                         "method":"insertItems"
                     },
@@ -969,7 +969,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"a node2"
                                 }
                             ],
-                            "","node2",false
+                            null,"node2",false
                         ],
                         "method":"insertItems"
                     },
@@ -984,7 +984,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"a last"
                                 }
                             ],
-                            "","last",false
+                            null,"last",false
                         ],
                         "method":"insertItems"
                     },
@@ -999,7 +999,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"b node1"
                                 }
                             ],
-                            "","node1",true
+                            null,"node1",true
                         ],
                         "method":"insertItems"
                     },
@@ -1014,7 +1014,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"b  last"
                                 }
                             ],
-                            "","last",true
+                            null,"last",true
                         ],
                         "method":"insertItems"
                     },
@@ -1029,7 +1029,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"subfirst"
                                 }
                             ],
-                            "node1","",true
+                            "node1",null,true
                         ],
                         "method":"insertItems"
                     },
@@ -1044,7 +1044,7 @@ xui.Class('App', 'xui.Module',{
                                     "caption":"sublast"
                                 }
                             ],
-                            "node1","",false
+                            "node1",null,false
                         ],
                         "method":"insertItems"
                     }
@@ -1054,12 +1054,12 @@ xui.Class('App', 'xui.Module',{
             host.ctl_group10.append(
                 xui.create("xui.UI.HTMLButton")
                 .setHost(host,"ctl_htmlbutton165")
-                .setDesc("Insert Rowss to TreeGrid")
+                .setDesc("Insert Rows to TreeGrid")
                 .setLeft("0.8333333333333334em")
                 .setTop("8.333333333333334em")
                 .setWidth("8.5em")
                 .setHeight("3.3333333333333335em")
-                .setHtml("Insert Rowss to TreeGrid")
+                .setHtml("Insert Rows to TreeGrid")
                 .onClick([
                     {
                         "desc":"first",
@@ -1086,7 +1086,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","",true
+                            null,null,true
                         ],
                         "method":"insertRows"
                     },
@@ -1115,7 +1115,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","",false
+                            null,null,false
                         ],
                         "method":"insertRows"
                     },
@@ -1144,7 +1144,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","row2",true
+                            null,"row2",true
                         ],
                         "method":"insertRows"
                     },
@@ -1173,7 +1173,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","last",true
+                            null,"last",true
                         ],
                         "method":"insertRows"
                     },
@@ -1202,7 +1202,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","row2",false
+                            null,"row2",false
                         ],
                         "method":"insertRows"
                     },
@@ -1231,7 +1231,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "","first",false
+                            null,"first",false
                         ],
                         "method":"insertRows"
                     },
@@ -1259,7 +1259,7 @@ xui.Class('App', 'xui.Module',{
                                     ]
                                 }
                             ],
-                            "row2","",true
+                            "row2",null,true
                         ],
                         "method":"insertRows"
                     },
