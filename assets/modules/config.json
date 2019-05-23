@@ -3,4 +3,10 @@
 	caption:{
 		cn:'简单模板'
 	}
+},{
+	id:'Services',
+	caption:{
+    en: 'Cloud Services Modules',
+		cn:'云服务调用'
+	}
 }]}

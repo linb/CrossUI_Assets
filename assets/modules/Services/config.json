@@ -1,0 +1,8 @@
+﻿{list:[{
+	id:'xui_module_tpl_GitHubAPISimple',
+	caption:{
+		en:'GitHub API Service',
+		cn:'GitHub API 服务'
+	},
+  message:'This module works out of the box, log in directly to GitHub and operate repositories'
+}]}
