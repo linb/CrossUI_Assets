@@ -49,7 +49,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.9375em")
                 .setWidth("8.75em")
                 .setHeight("2.5em")
-                );
+            );
             
             host.xui_ui_div22.append(
                 xui.create("xui.UI.Image")
@@ -61,7 +61,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("2.5em")
                 .setPosition("static")
                 .setSrc("{/}img/head.jpg")
-                );
+            );
             
             host.xui_ui_div22.append(
                 xui.create("xui.UI.Span")
@@ -69,7 +69,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("1em")
                 .setTabindex(2)
                 .setPosition("static")
-                );
+            );
             
             host.xui_ui_div22.append(
                 xui.create("xui.UI.Label")
@@ -82,7 +82,7 @@ xui.Class('App', 'xui.Module',{
                         "color":"#FFFFFF"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div22.append(
                 xui.create("xui.UI.Label")
@@ -97,7 +97,7 @@ xui.Class('App', 'xui.Module',{
                         "color":"#FFFFFF"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div17.append(
                 xui.create("xui.UI.Image")
@@ -112,7 +112,7 @@ xui.Class('App', 'xui.Module',{
                         "opacity":0.75
                     }
                 })
-                );
+            );
             
             host.xui_ui_div17.append(
                 xui.create("xui.UI.Gallery")
@@ -160,7 +160,11 @@ xui.Class('App', 'xui.Module',{
                                 "right":"a"
                             }
                         ],
-                        "event":2
+                        "event":2,
+                        "args":[
+                            "{page.xui_ui_svgpaper10.popUp()}"
+                        ],
+                        "redirection":"other:callback:call"
                     }
                 ])
                 .setCustomStyle({
@@ -175,7 +179,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"transparent"
                     }
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.SVGPaper")
@@ -232,7 +236,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("auto")
                 .setSelMode("none")
                 .setValue("")
-                );
+            );
             
             host.xui_ui_svgpaper1.append(
                 xui.create("xui.svg.path")
@@ -243,13 +247,13 @@ xui.Class('App', 'xui.Module',{
                     "stroke":"#B6B6B6",
                     "fill":"#ffffff"
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.SVGPaper")
                 .setHost(host,"xui_ui_svgpaper10")
-                .setLeft("42.3125em")
-                .setTop("3.5625em")
+                .setRight("3em")
+                .setTop("3.5em")
                 .setWidth("17em")
                 .setHeight("4.5em")
                 .setZIndex(1002)
@@ -268,7 +272,7 @@ xui.Class('App', 'xui.Module',{
                 .setShadow(true)
                 .setBorderType("flat")
                 .setBackground("#FFFFFF")
-                );
+            );
             
             host.xui_ui_svgpaper10.append(
                 xui.create("xui.UI.ComboInput")
@@ -283,7 +287,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Combo Input")
                 .setType("none")
                 .setCommandBtn("xui-icon-search")
-                );
+            );
             
             host.xui_ui_svgpaper10.append(
                 xui.create("xui.svg.path")
@@ -294,7 +298,7 @@ xui.Class('App', 'xui.Module',{
                     "stroke":"#B6B6B6",
                     "fill":"#ffffff"
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.ButtonViews")
@@ -374,8 +378,9 @@ xui.Class('App', 'xui.Module',{
                     "height":10
                 })
                 .setConDockFlexFill("none")
-                .setConDockStretch("0.5")
-                , "c");
+                .setConDockStretch("0.5"),
+                "c"
+            );
             
             host.xui_ui_div21.append(
                 xui.create("xui.UI.Panel")
@@ -389,7 +394,7 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Pie")
                 .setImageClass("fa fa-lg fa-pie-chart")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel4.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -440,7 +445,7 @@ xui.Class('App', 'xui.Module',{
                         }
                     ]
                 })
-                );
+            );
             
             host.xui_ui_div21.append(
                 xui.create("xui.UI.Panel")
@@ -454,7 +459,7 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Column")
                 .setImageClass("fa fa-lg fa-bar-chart")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel9.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -588,7 +593,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 })
-                );
+            );
             
             host.xui_ui_div21.append(
                 xui.create("xui.UI.Panel")
@@ -602,7 +607,7 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Lines")
                 .setImageClass("fa fa-lg fa-line-chart")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel10.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -737,7 +742,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 })
-                );
+            );
             
             host.xui_ui_div21.append(
                 xui.create("xui.UI.Panel")
@@ -750,7 +755,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("19.375em")
                 .setCaption("Radar")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel11.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -887,7 +892,7 @@ xui.Class('App', 'xui.Module',{
                         }
                     ]
                 })
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Div")
@@ -905,8 +910,9 @@ xui.Class('App', 'xui.Module',{
                     "width":10,
                     "height":10
                 })
-                .setConDockFlexFill("width")
-                , "b");
+                .setConDockFlexFill("width"),
+                "b"
+            );
             
             host.xui_ui_div44.append(
                 xui.create("xui.UI.Div")
@@ -920,7 +926,7 @@ xui.Class('App', 'xui.Module',{
                     "width":0,
                     "height":10
                 })
-                );
+            );
             
             host.xui_ui_div55.append(
                 xui.create("xui.UI.Panel")
@@ -930,7 +936,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("2.9375em")
                 .setWidth("21.25em")
                 .setHeight("16.875em")
-                .setConLayoutColumns(true)
+                .setConLayoutColumns(1)
                 .setConDockPadding({
                     "left":8,
                     "top":8,
@@ -946,7 +952,7 @@ xui.Class('App', 'xui.Module',{
                 .setToggleBtn(true)
                 .setCloseBtn(true)
                 .setRefreshBtn(true)
-                );
+            );
             
             host.xui_ui_panel33.append(
                 xui.create("xui.UI.Input")
@@ -957,7 +963,7 @@ xui.Class('App', 'xui.Module',{
                 .setPosition("relative")
                 .setLabelSize("8em")
                 .setLabelCaption("First Name")
-                );
+            );
             
             host.xui_ui_panel33.append(
                 xui.create("xui.UI.Input")
@@ -968,7 +974,7 @@ xui.Class('App', 'xui.Module',{
                 .setPosition("relative")
                 .setLabelSize("8em")
                 .setLabelCaption("Last Name")
-                );
+            );
             
             host.xui_ui_panel33.append(
                 xui.create("xui.UI.ComboInput")
@@ -980,7 +986,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("8em")
                 .setLabelCaption("Date of Birth")
                 .setType("date")
-                );
+            );
             
             host.xui_ui_panel33.append(
                 xui.create("xui.UI.Input")
@@ -991,7 +997,7 @@ xui.Class('App', 'xui.Module',{
                 .setPosition("relative")
                 .setLabelSize("8em")
                 .setLabelCaption("Phone Number")
-                );
+            );
             
             host.xui_ui_panel33.append(
                 xui.create("xui.UI.Block")
@@ -1001,7 +1007,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("4.833333333333333em")
                 .setHeight("3em")
                 .setOverflow("hidden")
-                );
+            );
             
             host.xui_ui_block20.append(
                 xui.create("xui.UI.Button")
@@ -1011,7 +1017,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Reset")
-                );
+            );
             
             host.xui_ui_block20.append(
                 xui.create("xui.UI.Button")
@@ -1021,7 +1027,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Save")
-                );
+            );
             
             host.xui_ui_div55.append(
                 xui.create("xui.UI.Panel")
@@ -1031,7 +1037,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("3.75em")
                 .setWidth("21.25em")
                 .setHeight("26.3125em")
-                .setConLayoutColumns(true)
+                .setConLayoutColumns(1)
                 .setConDockPadding({
                     "left":10,
                     "top":10,
@@ -1056,7 +1062,7 @@ xui.Class('App', 'xui.Module',{
                         "itemClass":"xuicon xui-icon-print"
                     }
                 ])
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.Input")
@@ -1066,7 +1072,7 @@ xui.Class('App', 'xui.Module',{
                 .setPosition("relative")
                 .setLabelSize("8em")
                 .setLabelCaption("Title")
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.ComboInput")
@@ -1077,7 +1083,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("8em")
                 .setLabelCaption("Start Date")
                 .setType("date")
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.ComboInput")
@@ -1088,7 +1094,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("8em")
                 .setLabelCaption("End Date")
                 .setType("date")
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.CheckBox")
@@ -1099,7 +1105,7 @@ xui.Class('App', 'xui.Module',{
                 .setHAlign("right")
                 .setIconPos("right")
                 .setCaption("All Day")
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.Input")
@@ -1111,7 +1117,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("8em")
                 .setLabelCaption("Memo")
                 .setMultiLines(true)
-                );
+            );
             
             host.xui_ui_panel35.append(
                 xui.create("xui.UI.Block")
@@ -1121,7 +1127,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("4.833333333333333em")
                 .setHeight("3em")
                 .setOverflow("hidden")
-                );
+            );
             
             host.xui_ui_block135.append(
                 xui.create("xui.UI.Button")
@@ -1131,7 +1137,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Reset")
-                );
+            );
             
             host.xui_ui_block135.append(
                 xui.create("xui.UI.Button")
@@ -1141,7 +1147,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Save")
-                );
+            );
             
             host.xui_ui_div44.append(
                 xui.create("xui.UI.Div")
@@ -1155,7 +1161,7 @@ xui.Class('App', 'xui.Module',{
                     "width":0,
                     "height":10
                 })
-                );
+            );
             
             host.xui_ui_div61.append(
                 xui.create("xui.UI.Panel")
@@ -1165,7 +1171,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("3.75em")
                 .setWidth("21.25em")
                 .setHeight("18.75em")
-                .setConLayoutColumns(true)
+                .setConLayoutColumns(1)
                 .setConDockPadding({
                     "left":10,
                     "top":10,
@@ -1179,7 +1185,7 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Style")
                 .setImageClass("fa fa-lg fa-paint-brush")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel34.append(
                 xui.create("xui.UI.ComboInput")
@@ -1203,7 +1209,7 @@ xui.Class('App', 'xui.Module',{
                         "disabled":false
                     }
                 ])
-                );
+            );
             
             host.xui_ui_panel34.append(
                 xui.create("xui.UI.RadioBox")
@@ -1232,7 +1238,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("12em")
                 .setLabelCaption("Font Weight")
                 .setValue("400")
-                );
+            );
             
             host.xui_ui_panel34.append(
                 xui.create("xui.UI.ComboInput")
@@ -1243,7 +1249,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("12em")
                 .setLabelCaption("Front Color")
                 .setType("color")
-                );
+            );
             
             host.xui_ui_panel34.append(
                 xui.create("xui.UI.ComboInput")
@@ -1254,7 +1260,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelSize("12em")
                 .setLabelCaption("Background Color")
                 .setType("color")
-                );
+            );
             
             host.xui_ui_panel34.append(
                 xui.create("xui.UI.Block")
@@ -1264,7 +1270,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("4.833333333333333em")
                 .setHeight("3em")
                 .setOverflow("hidden")
-                );
+            );
             
             host.xui_ui_block134.append(
                 xui.create("xui.UI.Button")
@@ -1274,7 +1280,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Reset")
-                );
+            );
             
             host.xui_ui_block134.append(
                 xui.create("xui.UI.Button")
@@ -1284,7 +1290,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.625em")
                 .setWidth("4.9375em")
                 .setCaption("Save")
-                );
+            );
             
             host.xui_ui_div61.append(
                 xui.create("xui.UI.Panel")
@@ -1294,7 +1300,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("3.75em")
                 .setWidth("21.25em")
                 .setHeight("19.375em")
-                .setConLayoutColumns(true)
+                .setConLayoutColumns(1)
                 .setConDockPadding({
                     "left":10,
                     "top":10,
@@ -1308,7 +1314,7 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Project")
                 .setImageClass("fa fa-lg fa-star")
                 .setToggleBtn(true)
-                );
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Block")
@@ -1318,7 +1324,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("4em")
                 .setHeight("3em")
                 .setOverflow("hidden")
-                );
+            );
             
             host.xui_ui_block11.append(
                 xui.create("xui.UI.Button")
@@ -1327,9 +1333,9 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("1.4375em")
                 .setTop("0.625em")
                 .setWidth("4.9375em")
-                .setImageClass("xui-icon-doubleleft")
                 .setCaption("Prev")
-                );
+                .setImageClass("xui-icon-doubleleft")
+            );
             
             host.xui_ui_block11.append(
                 xui.create("xui.UI.Button")
@@ -1338,9 +1344,9 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("8.6875em")
                 .setTop("0.625em")
                 .setWidth("4.9375em")
-                .setImageClass("xui-icon-doubleright")
                 .setCaption("Next")
-                );
+                .setImageClass("xui-icon-doubleright")
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Slider")
@@ -1357,7 +1363,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Project 1")
                 .setLabelHAlign("left")
                 .setValue("25")
-                );
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Slider")
@@ -1374,7 +1380,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Project  2")
                 .setLabelHAlign("left")
                 .setValue("45")
-                );
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Slider")
@@ -1391,7 +1397,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Project 3")
                 .setLabelHAlign("left")
                 .setValue("48")
-                );
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Slider")
@@ -1407,7 +1413,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Project 4")
                 .setLabelHAlign("left")
                 .setValue("20:80")
-                );
+            );
             
             host.xui_ui_panel36.append(
                 xui.create("xui.UI.Slider")
@@ -1423,7 +1429,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelCaption("Project 5")
                 .setLabelHAlign("left")
                 .setValue("20:60")
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Div")
@@ -1440,8 +1446,9 @@ xui.Class('App', 'xui.Module',{
                 .setConDockSpacing({
                     "width":10,
                     "height":10
-                })
-                , "d");
+                }),
+                "d"
+            );
             
             host.xui_ui_div33.append(
                 xui.create("xui.UI.Block")
@@ -1453,7 +1460,7 @@ xui.Class('App', 'xui.Module',{
                 .setBorderType("flat")
                 .setBackground("#FFFFFF")
                 .setOverflow("hidden")
-                );
+            );
             
             host.xui_ui_block30.append(
                 xui.create("xui.UI.StatusButtons")
@@ -1501,7 +1508,9 @@ xui.Class('App', 'xui.Module',{
                                     "imageClass":"xui-icon-file-fold"
                                 }
                             ],
-                            true,"",false
+                            true,
+                            "",
+                            false
                         ],
                         "method":"insertItems",
                         "conditions":[
@@ -1516,9 +1525,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"rename",
                         "type":"control",
                         "target":"xui_ui_treeview12",
-                        "params":[
-                            null
-                        ],
+                        "params":[null],
                         "method":"editItem",
                         "conditions":[
                             {
@@ -1532,8 +1539,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"del",
                         "type":"control",
                         "target":"xui_ui_treeview12",
-                        "params":[
-                        ],
+                        "params":[ ],
                         "method":"removeItems",
                         "conditions":[
                             {
@@ -1547,8 +1553,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"del-2",
                         "type":"control",
                         "target":"xui_ui_gallery10",
-                        "params":[
-                        ],
+                        "params":[ ],
                         "method":"clearItems",
                         "conditions":[
                             {
@@ -1559,7 +1564,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 ])
-                );
+            );
             
             host.xui_ui_block30.append(
                 xui.create("xui.UI.Button")
@@ -1568,15 +1573,14 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.3125em")
                 .setHeight("2.5em")
                 .setRight("1em")
-                .setImageClass("xui-icon-upload")
                 .setCaption("Upload")
+                .setImageClass("xui-icon-upload")
                 .onClick([
                     {
                         "desc":"sel file",
                         "type":"other",
                         "target":"url",
-                        "params":[
-                        ],
+                        "params":[ ],
                         "method":"selectFile",
                         "onOK":0
                     },
@@ -1585,13 +1589,14 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"msg",
                         "params":[
-                            "File","{temp.okData.value}"
+                            "File",
+                            "{temp.okData.value}"
                         ],
                         "method":"alert",
                         "onOK":2
                     }
                 ])
-                );
+            );
             
             host.xui_ui_div33.append(
                 xui.create("xui.UI.Block")
@@ -1602,7 +1607,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("12.5em")
                 .setBorderType("flat")
                 .setBackground("transparent")
-                );
+            );
             
             host.xui_ui_block41.append(
                 xui.create("xui.UI.Layout")
@@ -1643,7 +1648,7 @@ xui.Class('App', 'xui.Module',{
                         "border":"none"
                     }
                 })
-                );
+            );
             
             host.xui_ui_layout11.append(
                 xui.create("xui.UI.TreeView")
@@ -1715,9 +1720,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"Action 1",
                         "type":"control",
                         "target":"xui_ui_treeview12",
-                        "params":[
-                            null
-                        ],
+                        "params":[null],
                         "method":"editItem"
                     }
                 ])
@@ -1727,7 +1730,9 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"var",
                         "params":[
-                            "temp1","[data]data/folders.json","{args[1].id}"
+                            "temp1",
+                            "[data]data/folders.json",
+                            "{args[1].id}"
                         ],
                         "method":"temp"
                     },
@@ -1735,8 +1740,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"clear",
                         "type":"control",
                         "target":"xui_ui_gallery10",
-                        "params":[
-                        ],
+                        "params":[ ],
                         "method":"clearItems"
                     },
                     {
@@ -1744,12 +1748,16 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"callback",
                         "params":[
-                            "{page.xui_ui_gallery10.setItems}",undefined,undefined,"{temp.temp1}"
+                            "{page.xui_ui_gallery10.setItems}",
+                            undefined,
+                            undefined,
+                            "{temp.temp1}"
                         ],
                         "method":"call"
                     }
-                ])
-                , "before");
+                ]),
+                "before"
+            );
             
             host.xui_ui_layout11.append(
                 xui.create("xui.UI.Gallery")
@@ -1776,8 +1784,9 @@ xui.Class('App', 'xui.Module',{
                         ],
                         "method":"fireItemClickEvent"
                     }
-                ])
-                , "main");
+                ]),
+                "main"
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Div")
@@ -1792,8 +1801,9 @@ xui.Class('App', 'xui.Module',{
                 .setConDockSpacing({
                     "width":12,
                     "height":12
-                })
-                , "a");
+                }),
+                "a"
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Div")
@@ -1808,7 +1818,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#A693EB"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div43.append(
                 xui.create("xui.UI.Div")
@@ -1817,7 +1827,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("6.75em")
                 .setHeight("5em")
                 .setRight("0em")
-                );
+            );
             
             host.xui_ui_div84.append(
                 xui.create("xui.UI.Span")
@@ -1834,7 +1844,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"2em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div84.append(
                 xui.create("xui.UI.Span")
@@ -1850,7 +1860,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div43.append(
                 xui.create("xui.UI.Div")
@@ -1870,7 +1880,7 @@ xui.Class('App', 'xui.Module',{
                         "cursor":"pointer"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div43.append(
                 xui.create("xui.UI.Icon")
@@ -1883,7 +1893,7 @@ xui.Class('App', 'xui.Module',{
                 .setImageClass("fa fa-lg fa-users")
                 .setIconFontSize("4em")
                 .setIconColor("#B4A4EE")
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Div")
@@ -1899,7 +1909,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#A693EB"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div89.append(
                 xui.create("xui.UI.Div")
@@ -1908,7 +1918,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("6.75em")
                 .setHeight("5em")
                 .setRight("0em")
-                );
+            );
             
             host.xui_ui_div90.append(
                 xui.create("xui.UI.Span")
@@ -1925,7 +1935,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"2em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div90.append(
                 xui.create("xui.UI.Span")
@@ -1941,7 +1951,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div89.append(
                 xui.create("xui.UI.Div")
@@ -1961,7 +1971,7 @@ xui.Class('App', 'xui.Module',{
                         "cursor":"pointer"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div89.append(
                 xui.create("xui.UI.Icon")
@@ -1974,7 +1984,7 @@ xui.Class('App', 'xui.Module',{
                 .setImageClass("fa fa-lg fa-wpforms")
                 .setIconFontSize("4em")
                 .setIconColor("#B4A4EE")
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Div")
@@ -1990,7 +2000,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#F19B60"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div92.append(
                 xui.create("xui.UI.Div")
@@ -2000,7 +2010,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("5em")
                 .setRight("0em")
                 .setZIndex(1002)
-                );
+            );
             
             host.xui_ui_div93.append(
                 xui.create("xui.UI.Span")
@@ -2016,7 +2026,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"2em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div93.append(
                 xui.create("xui.UI.Span")
@@ -2031,7 +2041,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div92.append(
                 xui.create("xui.UI.Div")
@@ -2051,7 +2061,7 @@ xui.Class('App', 'xui.Module',{
                         "cursor":"pointer"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div92.append(
                 xui.create("xui.UI.Icon")
@@ -2064,7 +2074,7 @@ xui.Class('App', 'xui.Module',{
                 .setImageClass("fa fa-lg fa-info-circle")
                 .setIconFontSize("4em")
                 .setIconColor("#F3AB7A")
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Div")
@@ -2080,7 +2090,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#49CD81"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div95.append(
                 xui.create("xui.UI.Div")
@@ -2089,7 +2099,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("6.75em")
                 .setHeight("5em")
                 .setRight("0em")
-                );
+            );
             
             host.xui_ui_div96.append(
                 xui.create("xui.UI.Span")
@@ -2106,7 +2116,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"2em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div96.append(
                 xui.create("xui.UI.Span")
@@ -2122,7 +2132,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div95.append(
                 xui.create("xui.UI.Div")
@@ -2142,7 +2152,7 @@ xui.Class('App', 'xui.Module',{
                         "cursor":"pointer"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div95.append(
                 xui.create("xui.UI.Icon")
@@ -2155,7 +2165,7 @@ xui.Class('App', 'xui.Module',{
                 .setImageClass("fa fa-lg fa-users")
                 .setIconFontSize("4em")
                 .setIconColor("#67D596")
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Group")
@@ -2176,7 +2186,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("16.25em")
                 .setCaption("Messages")
                 .setImageClass("fa fa-lg fa-info-circle")
-                );
+            );
             
             host.xui_ui_group3.append(
                 xui.create("xui.UI.Div")
@@ -2184,7 +2194,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("auto")
                 .setHeight("auto")
                 .setPosition("relative")
-                );
+            );
             
             host.xui_ui_div42.append(
                 xui.create("xui.UI.Div")
@@ -2203,7 +2213,7 @@ xui.Class('App', 'xui.Module',{
                         "border-left":"solid 3px #ff0000"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div42.append(
                 xui.create("xui.UI.Image")
@@ -2219,7 +2229,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#FF69B4"
                     }
                 })
-                );
+            );
             
             host.xui_ui_group3.append(
                 xui.create("xui.UI.Div")
@@ -2227,7 +2237,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("auto")
                 .setHeight("auto")
                 .setPosition("relative")
-                );
+            );
             
             host.xui_ui_div105.append(
                 xui.create("xui.UI.Div")
@@ -2246,7 +2256,7 @@ xui.Class('App', 'xui.Module',{
                         "line-height":"1.22"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div105.append(
                 xui.create("xui.UI.Image")
@@ -2262,7 +2272,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#FF69B4"
                     }
                 })
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Group")
@@ -2283,7 +2293,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("16.25em")
                 .setCaption("Pending Tasks")
                 .setImageClass("fa fa-lg fa-tasks")
-                );
+            );
             
             host.xui_ui_group4.append(
                 xui.create("xui.UI.Div")
@@ -2299,7 +2309,7 @@ xui.Class('App', 'xui.Module',{
                         "background-color":"#B0C4DE"
                     }
                 })
-                );
+            );
             
             host.xui_ui_group4.append(
                 xui.create("xui.UI.List")
@@ -2359,7 +2369,7 @@ xui.Class('App', 'xui.Module',{
                 .setLabelPos("none")
                 .setLabelHAlign("")
                 .setValue("b")
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Group")
@@ -2386,7 +2396,7 @@ xui.Class('App', 'xui.Module',{
                         "itemClass":"fa fa-lg fa-refresh"
                     }
                 ])
-                );
+            );
             
             host.xui_ui_group1.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -2443,8 +2453,7 @@ xui.Class('App', 'xui.Module',{
                     ],
                     "trendlines":[
                         {
-                            "line":[
-                            ]
+                            "line":[ ]
                         }
                     ],
                     "annotations":{
@@ -2459,7 +2468,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 })
-                );
+            );
             
             host.xui_ui_div26.append(
                 xui.create("xui.UI.Group")
@@ -2486,7 +2495,7 @@ xui.Class('App', 'xui.Module',{
                         "itemClass":"fa fa-lg fa-refresh"
                     }
                 ])
-                );
+            );
             
             host.xui_ui_group2.append(
                 xui.create("xui.UI.FusionChartsXT")
@@ -2537,8 +2546,7 @@ xui.Class('App', 'xui.Module',{
                     ],
                     "trendlines":[
                         {
-                            "line":[
-                            ]
+                            "line":[ ]
                         }
                     ],
                     "annotations":{
@@ -2553,7 +2561,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 })
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Block")
@@ -2563,8 +2571,9 @@ xui.Class('App', 'xui.Module',{
                 .setDockStretch("stretch")
                 .setLeft("14.583333333333334em")
                 .setHeight("3.1875em")
-                .setBorderType("none")
-                , "c");
+                .setBorderType("none"),
+                "c"
+            );
             
             host.xui_ui_block23.append(
                 xui.create("xui.UI.Label")
@@ -2577,7 +2586,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1.25em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Block")
@@ -2587,8 +2596,9 @@ xui.Class('App', 'xui.Module',{
                 .setDockStretch("stretch")
                 .setLeft("14.583333333333334em")
                 .setHeight("3.1875em")
-                .setBorderType("none")
-                , "a");
+                .setBorderType("none"),
+                "a"
+            );
             
             host.xui_ui_block27.append(
                 xui.create("xui.UI.Label")
@@ -2601,7 +2611,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1.25em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Block")
@@ -2611,8 +2621,9 @@ xui.Class('App', 'xui.Module',{
                 .setDockStretch("stretch")
                 .setLeft("14.583333333333334em")
                 .setHeight("3.1875em")
-                .setBorderType("none")
-                , "b");
+                .setBorderType("none"),
+                "b"
+            );
             
             host.xui_ui_block28.append(
                 xui.create("xui.UI.Label")
@@ -2625,7 +2636,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1.25em"
                     }
                 })
-                );
+            );
             
             host.xui_ui_buttonviews2.append(
                 xui.create("xui.UI.Block")
@@ -2636,8 +2647,9 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("14.583333333333334em")
                 .setHeight("3.1875em")
                 .setBorderType("none")
-                .setOverflow("hidden")
-                , "d");
+                .setOverflow("hidden"),
+                "d"
+            );
             
             host.xui_ui_block29.append(
                 xui.create("xui.UI.Label")
@@ -2650,7 +2662,7 @@ xui.Class('App', 'xui.Module',{
                         "font-size":"1.25em"
                     }
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.CSSBox")
