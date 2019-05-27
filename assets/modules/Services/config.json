@@ -1,8 +1,14 @@
 ﻿{list:[{
 	id:'xui_module_tpl_GitHubAPISimple',
 	caption:{
-		en:'GitHub API Service',
-		cn:'GitHub API 服务'
+		en:'GitHub API',
+		cn:'GitHub API'
 	},
   message:'This module works out of the box, log in directly to GitHub and operate repositories'
+},{
+	id:'xui_module_tpl_CodeMirror5',
+	caption:{
+		en:'CodeMirror5 API',
+		cn:'CodeMirror5 API'
+	}
 }]}
