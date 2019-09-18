@@ -1,10 +1,22 @@
 ﻿{list:[{
+	id:'xui_module_tpl_GitHubDBHandler2',
+	caption:{
+		en:'GitHub DB Service 2',
+		cn:'GitHub DB 实现 2'
+	},
+  message:"It's a DB implement based on Github API. <br/>"
+        +" This module works out of the box, log in directly to GitHub and operate repositories.<br/>"
+        +" Look at : <a href='https://github.com/linb/Github_DB_Manager'>https://github.com/linb/Github_DB_Manager</a>"
+},{
 	id:'xui_module_tpl_GitHubAPISimple',
 	caption:{
 		en:'GitHub API',
 		cn:'GitHub API'
 	},
-  message:'This module works out of the box, log in directly to GitHub and operate repositories'
+  message:"It's a Github API wrapper. <br/>"
+        +" This module works out of the box, log in directly to GitHub and operate repositories. <br/>"
+        +" Look at : <a href='https://github.com/linb/GitHub_Code_Editor'>https://github.com/linb/GitHub_Code_Editor</a>"
+        + " or <a href='https://github.com/linb/GitHub_JSON_Editor'>https://github.com/linb/GitHub_JSON_Editor</a>"
 },{
 	id:'xui_module_tpl_CodeMirror5',
 	caption:{
