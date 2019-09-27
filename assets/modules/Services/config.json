@@ -1,10 +1,17 @@
-﻿{list:[{
+﻿{list:{
+	id:'xui_module_tpl_Firestore',
+	caption:{
+		en:'Firestore DB Module',
+		cn:'Firestore 数据库模块'
+	},
+  settingUI:"settingDialog.js"
+},[{
 	id:'xui_module_tpl_GitHubDBHandler2',
 	caption:{
 		en:'GitHub DB Service 2',
 		cn:'GitHub DB 实现 2'
 	},
-  message:"It's a DB implement based on Github API. <br/>"
+  "message":"It's a DB implement based on Github API, you need a Github account to use it. <br/>"
         +" This module works out of the box, log in directly to GitHub and operate repositories.<br/>"
         +" Look at : <a target=_blank href='https://github.com/linb/Github_DB_Manager'>https://github.com/linb/Github_DB_Manager</a>"
 },{
@@ -13,7 +20,7 @@
 		en:'GitHub API',
 		cn:'GitHub API'
 	},
-  message:"It's a Github API wrapper. <br/>"
+  "message":"It's a Github API wrapper, you need a Github account to use it. <br/>"
         +" This module works out of the box, log in directly to GitHub and operate repositories. <br/>"
         +" Look at : <a target=_blank href='https://github.com/linb/GitHub_Code_Editor'>https://github.com/linb/GitHub_Code_Editor</a>"
         + " or <a target=_blank href='https://github.com/linb/GitHub_JSON_Editor'>https://github.com/linb/GitHub_JSON_Editor</a>"
