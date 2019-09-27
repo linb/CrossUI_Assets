@@ -16,6 +16,7 @@ xui.Class('Module.FirebaseHandler', 'xui.Module',{
             window.xui_FirebaseHandler = this;
         },     
         getFirebaseConfig:function(){
+            /*
             return {
                 config : {
                   apiKey: "AIzaSyC2Bqk0ddNtUa4UOhgJS9fpUq_3bRG1rck",
@@ -31,8 +32,8 @@ xui.Class('Module.FirebaseHandler', 'xui.Module',{
                 // Set to null if One-tap sign-up is not supported.
                   GOOGLE_OAUTH_CLIENT_ID : null
             };
-
-            // return "{codesnip_conf}";
+            */
+            return "{codesnip_conf}";
         },
         ensureFirebaseAuth:function(){
             var api = this;
