@@ -1,11 +1,11 @@
-﻿{list:{
+﻿{list:[{
 	id:'xui_module_tpl_Firestore',
 	caption:{
 		en:'Firestore DB Module',
 		cn:'Firestore 数据库模块'
 	},
   settingUI:"settingDialog.js"
-},[{
+},{
 	id:'xui_module_tpl_GitHubDBHandler2',
 	caption:{
 		en:'GitHub DB Service 2',
