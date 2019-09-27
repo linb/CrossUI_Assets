@@ -181,7 +181,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("6.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("AIzaSyC2Bqk0ddNtUa4UOhgJS9fpUq_3bRG1rck")
             );
             
             host.xui_ui_form.append(
@@ -195,7 +194,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("8.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("crossui.firebaseapp.com")
             );
             
             host.xui_ui_form.append(
@@ -209,7 +207,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("10.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("//crossui.firebaseio.com")
             );
             
             host.xui_ui_form.append(
@@ -223,7 +220,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("12.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("crossui")
             );
             
             host.xui_ui_form.append(
@@ -236,7 +232,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("14.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("crossui.appspot.com")
             );
             
             host.xui_ui_form.append(
@@ -249,7 +244,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("16.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("20598955141")
             );
             
             host.xui_ui_form.append(
@@ -263,7 +257,6 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
                 .setLeft("17.416666666666668em")
                 .setTop("18.5em")
                 .setWidth("30.833333333333332em")
-                .setValue("1:20598955141:web:f86e98e32c1ffcdaf61dec")
             );
             
             host.xui_ui_dialog1.append(
