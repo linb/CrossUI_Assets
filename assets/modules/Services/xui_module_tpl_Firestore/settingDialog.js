@@ -306,7 +306,7 @@ xui.Class('xui.Once.Setting', 'xui.Module',{
             if(ns.xui_ui_form.checkRequired(false, null, true)){
                 binder.updateDataFromUI();
                 var values = binder.getData();
-                ns.callback({ "conf" : xui.unserialize(values) });
+                ns.callback({ "conf" : (window.JSON?JSON.stringify:xui.stringify)(values) });
             }
             this.xui_ui_dialog1.destroy();
         },
