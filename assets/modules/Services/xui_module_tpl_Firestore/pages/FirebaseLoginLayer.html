@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>CrossUI Firebase Auth Layer</title>
+    <link type="text/css" rel="stylesheet" href="//cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+    <script src="//www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="//www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+    <script src="//cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div style="text-align: center;width: 320px; margin: 32px auto;">
+        <h3 style="margin:12px">Log In</h3>
+        <div style="height: 1px;overflow: hidden;background-color: #e0e0e0;"></div>
+        <h6 style="margin:6px;color: #aaa;    font-style: italic;">Powered by Google Firebase Auth</h6>
+
+        <div id="loading">Loading...</div>
+        <div id="loaded" style="display:none">
+          <div id="main">
+            <div id="user-signed-in" style="display:none">
+              <h4>You are signed in!</h4>
+            </div>
+            <div id="user-signed-out" style="display:none">
+              <div id="firebaseui-spa">
+                <div id="firebaseui-container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+!function(){
+    var pHandler = window.parent.xui_FirebaseHandler;
+    var firebaseConfig = pHandler && pHandler.getFirebaseConfig();
+    var informParent = function(user){
+        if(pHandler && pHandler.onFirebaseAuthOK)
+            pHandler.onFirebaseAuthOK(user);
+     };
+
+    /*
+    var firebaseConfig = {
+        config : {
+          apiKey: "AIzaSyC2Bqk0ddNtUa4UOhgJS9fpUq_3bRG1rck",
+          authDomain: "crossui.firebaseapp.com",
+          databaseURL: "https://crossui.firebaseio.com",
+          projectId: "crossui",
+          storageBucket: "crossui.appspot.com",
+          messagingSenderId: "20598955141",
+          appId: "1:20598955141:web:f86e98e32c1ffcdaf61dec"
+      },
+      signInMethods : "Google;Github;EmailPassword",
+    // Google OAuth Client ID, needed to support One-tap sign-up.
+    // Set to null if One-tap sign-up is not supported.
+      GOOGLE_OAUTH_CLIENT_ID : null
+    };
+    */
+    if(!firebaseConfig||!firebaseConfig.config){
+      document.getElementById('loading').innerHTML = "Can't get Firebase config in parent window!";
+      return;
+    }
+    if(typeof firebaseConfig.signInMethods=="string")
+      firebaseConfig.signInMethods = firebaseConfig.signInMethods.split(/[,;]/);
+    if(firebaseConfig.signInMethods.length==0){
+       firebaseConfig.signInMethods =  ['Google','Github','EmailPassword'];
+    }
+    firebaseConfig.GOOGLE_OAUTH_CLIENT_ID = firebaseConfig.GOOGLE_OAUTH_CLIENT_ID || null;
+
+    /** 
+    * functions
+    **/
+
+    firebase.initializeApp(firebaseConfig.config);
+
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+   // ui.disableAutoSignIn();
+
+    // Listen to change in auth state so it displays the correct UI for when
+    // the user is signed in or not.
+    firebase.auth().onAuthStateChanged(function(user) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('loaded').style.display = 'block';
+      user ? handleSignedInUser(user) : handleSignedOutUser();
+    });
+
+    var signInMap={
+        'Google':{
+          provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          // Required to enable this provider in One-Tap Sign-up.
+          authMethod: 'https://accounts.google.com',
+          // Required to enable ID token credentials for this provider.
+          clientId: firebaseConfig.GOOGLE_OAUTH_CLIENT_ID
+        },
+        'Facebook':{
+          provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          scopes :[
+            'public_profile',
+            'email',
+            'user_likes',
+            'user_friends'
+          ]
+        },
+        'Twitter':firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+        'Github':firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        'EmailPassword':{
+          provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          // Whether the display name should be displayed in Sign Up page.
+          requireDisplayName: true,
+          signInMethod: getEmailSignInMethod()
+        },
+        'Phone':{
+          provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+          recaptchaParameters: {
+            size: getRecaptchaMode()
+          }
+        },
+        'Microsoft':{
+          provider: 'microsoft.com',
+          providerName: 'Microsoft',
+          buttonColor: '#2F2F2F',
+          iconUrl: 'https://docs.microsoft.com/en-us/azure/active-directory/develop/media/howto-add-branding-in-azure-ad-apps/ms-symbollockup_mssymbol_19.png',
+          loginHintKey: 'login_hint'
+        },
+        'Anonymous':firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
+    };
+   
+    var signInOptions=[ ];
+    for(var i=0,l=firebaseConfig.signInMethods.length;i<l;i++){
+      signInOptions.push(signInMap[firebaseConfig.signInMethods[i]]);
+    }
+
+    function getUiConfig() {
+      return {
+        'callbacks': {
+          // Called when the user has been successfully signed in.
+          'signInSuccessWithAuthResult': function(authResult, redirectUrl) {
+            if (authResult.user) {
+              handleSignedInUser(authResult.user);
+            }
+            // Do not redirect.
+            return false;
+          }
+        },
+        // Opens IDP Providers sign-in flow in a popup.
+        'signInFlow': 'popup',
+        'signInOptions': signInOptions,
+        // Terms of service url.
+        'tosUrl': 'https://www.google.com',
+        // Privacy policy url.
+        'privacyPolicyUrl': 'https://www.google.com',
+        'credentialHelper': firebaseConfig.GOOGLE_OAUTH_CLIENT_ID ? firebaseui.auth.CredentialHelper.GOOGLE_YOLO : firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
+      };
+    }
+
+    // Displays the UI for a signed in user.
+    var handleSignedInUser = function(user) {
+      document.getElementById('user-signed-out').style.display = 'none';
+      document.getElementById('user-signed-in').style.display = 'block';
+      informParent(user);
+    };
+    // Displays the UI for a signed out user.
+    var handleSignedOutUser = function() {
+      document.getElementById('user-signed-out').style.display = 'block';
+      document.getElementById('user-signed-in').style.display = 'none';
+      ui.start('#firebaseui-container', getUiConfig());
+    };
+
+    // common
+    function parseQueryString(queryString) {
+      // Remove first character if it is ? or #.
+      if (queryString.length && (queryString.charAt(0) == '#' || queryString.charAt(0) == '?')) {
+        queryString = queryString.substring(1);
+      }
+      var config = {}, pairs = queryString.split('&');
+      for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        if (pair.length == 2) {
+          config[pair[0]] = pair[1];
+        }
+      }
+      return config;
+    }
+    function getRecaptchaMode() {
+      return parseQueryString(location.hash)['recaptcha'] === 'invisible' ?'invisible' : 'normal';
+    } 
+    function getEmailSignInMethod() {
+      return parseQueryString(location.hash)['emailSignInMethod'] === 'password' ? 'password' : 'emailLink';
+    }
+}();
+</script>
