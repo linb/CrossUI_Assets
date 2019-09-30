@@ -1,11 +1,11 @@
 // It's a module witohout UI elements
-xui.Class('Module.FirebaseHandler', 'xui.Module',{
+xui.Class('App', 'xui.Module',{
     Instance:{
         SCHEMAS_COLLECTION:"__xui_db_schemas",
  
         // Dependency libs
         Required:[
-            "[firebase]https://www.gstatic.com/firebasejs/6.6.1/firebase.js"
+            "[firebase]https://www.gstatic.com/firebasejs/7.0.0/firebase.js"
         ],
         // To initialize properties
         properties : {
