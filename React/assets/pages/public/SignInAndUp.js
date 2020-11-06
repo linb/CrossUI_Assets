@@ -191,11 +191,7 @@ const SignInAndUp = props => {
         <${React.Fragment}>
             <main className=${classes.layout}>
                 <${Paper} className=${classes.paper} style=${{ "marginTop": "16px", "marginBottom": "16px", "paddingBottom": "16px" }}>
-                    <${Tabs} centered value=${router.location.pathname === "/signup" ? "signup" : "signin"} onChange=${(e, value) => {
-        let result;
-        result = router.navigate(value);
-        return result;
-    }}>
+                    <${Tabs} centered value=${router.location.pathname === "/signup" ? "signup" : "signin"} onChange=${ ( e , value ) => router.navigate( value ) }>
                         <${Tab} value="signin" label="log in">
                         </${Tab}>
                         <${Tab} value="signup" label="not a user yet">
