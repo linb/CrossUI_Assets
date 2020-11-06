@@ -78,7 +78,11 @@ export const SignIn = props => {
                 <${Typography} component="h1" variant="h5">
                     Sign in
                 </${Typography}>
-                <${RHForm} className=${ classes.form } noValidate onSubmit=${ data => console.log(data) }>
+                <${RHForm} className=${ classes.form } noValidate onSubmit=${ ( data ) => {
+    let result;
+    result = JSON.stringify( data );
+    alert( result );
+} }>
                     <${TextField} variant="outlined" margin="normal" required fullWidth label="Email Address" name="email" autoComplete="email" autoFocus>
                     </${TextField}>
                     <${TextField} variant="outlined" margin="normal" required fullWidth name="password" label="Password" type="password" autoComplete="current-password">
@@ -122,7 +126,11 @@ export const SignUp = props => {
                 <${Typography} component="h1" variant="h5">
                     Sign up
                 </${Typography}>
-                <${RHForm} className=${classes.form} noValidate onSubmit=${data => console.log(data)}>
+                <${RHForm} className=${classes.form} noValidate onSubmit=${ ( data ) => {
+    let result;
+    result = JSON.stringify( data );
+    alert( result );
+} }>    
                     <${Grid} container spacing=${2}>
                         <${Grid} item xs=${12} sm=${6}>
                             <${TextField} autoComplete="fname" name="firstName" variant="outlined" required fullWidth label="First Name" autoFocus >
