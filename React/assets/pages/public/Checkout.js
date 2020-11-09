@@ -283,7 +283,7 @@ const Checkout = props => {
                             </${PaymentForm}>
                         </${If}>
                         <${If} condition=${ module.state.activeStep === 2 }>
-                            <${Review} <>
+                            <${Review}
                             </${Review}>
                         </${If}>
                         <${If} condition=${ module.state.activeStep > 2 }>
