@@ -267,9 +267,9 @@ const Checkout = props => {
                                 PaymentForm
                             </${StepLabel}>
                         </${Step}>
-                        <${Step} key="PaymentForm">
+                        <${Step} key="Review">
                             <${StepLabel}>
-                                PaymentForm
+                                Review
                             </${StepLabel}>
                         </${Step}>
                     </${Stepper}>
