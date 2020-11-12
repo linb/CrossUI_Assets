@@ -1,5 +1,5 @@
 
- /*jshint esversion: 8 */
+/*jshint esversion: 8 */
 import { React, html } from "../web_modules/preact-htm/index.js";
 import { useModule } from "../web_modules/react-hook-module/index.js";
 import { RelativeRouter } from "../web_modules/react-hook-module/plugin_router.js";
@@ -29,7 +29,6 @@ import { TableBody } from "../web_modules/material-ui/index.js";
 import { TableCell } from "../web_modules/material-ui/index.js";
 import { TableHead } from "../web_modules/material-ui/index.js";
 import { TableRow } from "../web_modules/material-ui/index.js";
-
 import { LineChart } from "../web_modules/recharts/index.js";
 import { ResponsiveContainer } from "../web_modules/recharts/index.js";
 import { Line } from "../web_modules/recharts/index.js";
@@ -38,109 +37,109 @@ import { YAxis } from "../web_modules/recharts/index.js";
 import { CartesianGrid } from "../web_modules/recharts/index.js";
 import { Tooltip } from "../web_modules/recharts/index.js";
 import { Legend } from "../web_modules/recharts/index.js";
-
+import PluginMUI from "../web_modules/react-hook-module/plugin_mui.js";
 const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex'
-  },
-  toolbar: {
-    paddingRight: 24 // keep right padding when drawer closed
-  },
-  toolbarIcon: Object.assign({}, theme.mixins.toolbar, {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px'
-  }),
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    })
-  },
-  appBarShift: {
-    marginLeft: 240,
-    width: "calc(100% - 240px)",
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  menuButton: {
-    marginRight: 36
-  },
-  menuButtonHidden: {
-    display: 'none'
-  },
-  title: {
-    flexGrow: 1
-  },
-  drawerPaper: {
-    position: 'relative',
-    whiteSpace: 'nowrap',
-    width: 240,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  drawerPaperClose: {
-    overflowX: 'hidden',
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
+    root: {
+        display: 'flex'
+    },
+    toolbar: {
+        paddingRight: 24 // keep right padding when drawer closed
+    },
+    toolbarIcon: Object.assign({}, theme.mixins.toolbar, {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        padding: '0 8px'
     }),
-    width: theme.spacing(6),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(8)
+    appBar: {
+        zIndex: theme.zIndex.drawer + 1,
+        transition: theme.transitions.create(['width', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen
+        })
+    },
+    appBarShift: {
+        marginLeft: 240,
+        width: "calc(100% - 240px)",
+        transition: theme.transitions.create(['width', 'margin'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen
+        })
+    },
+    menuButton: {
+        marginRight: 36
+    },
+    menuButtonHidden: {
+        display: 'none'
+    },
+    title: {
+        flexGrow: 1
+    },
+    drawerPaper: {
+        position: 'relative',
+        whiteSpace: 'nowrap',
+        width: 240,
+        transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen
+        })
+    },
+    drawerPaperClose: {
+        overflowX: 'hidden',
+        transition: theme.transitions.create('width', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen
+        }),
+        width: theme.spacing(6),
+        [theme.breakpoints.up('sm')]: {
+            width: theme.spacing(8)
+        }
+    },
+    appBarSpacer: theme.mixins.toolbar,
+    content: {
+        flexGrow: 1,
+        height: '100vh',
+        overflow: 'auto'
+    },
+    container: {
+        paddingTop: theme.spacing(4),
+        paddingBottom: theme.spacing(4)
+    },
+    paper: {
+        padding: theme.spacing(2),
+        display: 'flex',
+        overflow: 'auto',
+        flexDirection: 'column'
+    },
+    fixedHeight: {
+        height: 240
+    },
+    seeMore: {
+        marginTop: theme.spacing(3)
+    },
+    depositContext: {
+        flex: 1
     }
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto'
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4)
-  },
-  paper: {
-    padding: theme.spacing(2),
-    display: 'flex',
-    overflow: 'auto',
-    flexDirection: 'column'
-  },
-  fixedHeight: {
-    height: 240
-  },
-  seeMore: {
-    marginTop: theme.spacing(3)
-  },
-  depositContext: {
-    flex: 1
-  }
 }));
 
 const recharts_demodata1 = [{
-  name: 'Page A', uv: 4000, pv: 2400, amt: 2400
+    name: 'Page A', uv: 4000, pv: 2400, amt: 2400
 }, {
-  name: 'Page B', uv: 3000, pv: 1398, amt: 2210
+    name: 'Page B', uv: 3000, pv: 1398, amt: 2210
 }, {
-  name: 'Page C', uv: 2000, pv: 9800, amt: 2290
+    name: 'Page C', uv: 2000, pv: 9800, amt: 2290
 }, {
-  name: 'Page D', uv: 2780, pv: 3908, amt: 2000
+    name: 'Page D', uv: 2780, pv: 3908, amt: 2000
 }, {
-  name: 'Page E', uv: 1890, pv: 4800, amt: 2181
+    name: 'Page E', uv: 1890, pv: 4800, amt: 2181
 }, {
-  name: 'Page F', uv: 2390, pv: 3800, amt: 2500
+    name: 'Page F', uv: 2390, pv: 3800, amt: 2500
 }, {
-  name: 'Page G', uv: 3490, pv: 4300, amt: 2100
+    name: 'Page G', uv: 3490, pv: 4300, amt: 2100
 }];
 
 export const Copyright = props => {
-  return html`
+    return html`
         <${Typography} variant="body2" color="textSecondary" align="center">
             ${'Copyright © '}
             <${Link} color="inherit" href="https://crossui.com/">
@@ -152,7 +151,7 @@ export const Copyright = props => {
 };
 
 export const MainListItems = props => {
-  return html`
+    return html`
         <div>
             <${ListItem} button selected=${props.selected === "/"} onClick=${e => props.onSelectItem && props.onSelectItem("/")}>
                 <${ListItemIcon}>
@@ -204,7 +203,7 @@ export const MainListItems = props => {
 };
 
 export const SecondaryListItems = props => {
-  return html`
+    return html`
       <div>
         <${ListSubheader} inset>Saved reports</${ListSubheader}>
         <${ListItem} button selected=${props.selected === "/report_currentmonth"} onClick=${e => props.onSelectItem && props.onSelectItem("/report_currentmonth")}>
@@ -230,7 +229,7 @@ export const SecondaryListItems = props => {
 };
 
 export const Chart = props => {
-  return html`
+    return html`
         <${React.Fragment}>
             <${ResponsiveContainer} key="bd8xf94g">
                 <${LineChart} width=${600} height=${300} data=${recharts_demodata1} margin=${{ "top": 5, "right": 30, "left": 20, "bottom": 5 }}>
@@ -255,29 +254,36 @@ export const Chart = props => {
 };
 
 export const Deposits = props => {
-  const classes = useStyles();
-  return html`
-    <${React.Fragment}>
-        <${Typography} component="h2" variant="h6" color="primary" gutterBottom>
-            Recent Deposits
-        </${Typography}>
-      <${Typography} component="p" variant="h4">
-        $3,024.00
-      </${Typography}>
-      <${Typography} color="textSecondary" className=${classes.depositContext}>
-        on 15 March, 2019
-      </${Typography}>
-      <div>
-        <${Link} color="primary" href="#" onClick=${e => e.preventDefault()}>
-          View balance
-        </${Link}>
-      </div>
-    </${React.Fragment}>
-  `;
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {});
+
+    const classes = useStyles();
+    return html`
+        <${React.Fragment}>
+            <${Typography} component="h2" variant="h6" color="primary" gutterBottom>
+                Recent Deposits
+            </${Typography}>
+            <${Typography} component="p" variant="h4">
+                $3,024.00
+            </${Typography}>
+            <${Typography} color="textSecondary" className=${classes.depositContext}>
+                on 15 March, 2019
+            </${Typography}>
+            <div>
+                <${Link} color="primary" href="#" onClick=${e => module.showBackdrop()}>
+                    View balance
+                </${Link}>
+            </div>
+        </${React.Fragment}>
+    `;
 };
 
 export const Order = props => {
-  return html`
+    return html`
         <${TableRow} key=${props.id}>
           <${TableCell}>${props.date}</${TableCell}>
           <${TableCell}>${props.name}</${TableCell}>
@@ -289,56 +295,56 @@ export const Order = props => {
 };
 
 export const Orders = props => {
-  const classes = useStyles();
-  const {
-    module,
-    router,
-    request,
-    auth
-  } = useModule(props, {
-    "state": {
-      "rows": [{
-        "id": 0,
-        "date": "16 Mar, 2019",
-        "name": "Elvis Presley",
-        "shipTo": "Tupelo, MS",
-        "paymentMethod": "VISA ⠀•••• 3719",
-        "amount": 312.44
-      }, {
-        "id": 1,
-        "date": "16 Mar, 2019",
-        "name": "Paul McCartney",
-        "shipTo": "London, UK",
-        "paymentMethod": "VISA ⠀•••• 2574",
-        "amount": 866.99
-      }, {
-        "id": 2,
-        "date": "16 Mar, 2019",
-        "name": "Tom Scholz",
-        "shipTo": "Boston, MA",
-        "paymentMethod": "MC ⠀•••• 1253",
-        "amount": 100.81
-      }, {
-        "id": 3,
-        "date": "16 Mar, 2019",
-        "name": "Michael Jackson",
-        "shipTo": "Gary, IN",
-        "paymentMethod": "AMEX ⠀•••• 2000",
-        "amount": 654.39
-      }, {
-        "id": 4,
-        "date": "15 Mar, 2019",
-        "name": "Bruce Springsteen",
-        "shipTo": "Long Branch, NJ",
-        "paymentMethod": "VISA ⠀•••• 5919",
-        "amount": 212.79
-      }]
-    }
-  });
+    const classes = useStyles();
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {
+        "state": {
+            "rows": [{
+                "id": 0,
+                "date": "16 Mar, 2019",
+                "name": "Elvis Presley",
+                "shipTo": "Tupelo, MS",
+                "paymentMethod": "VISA ⠀•••• 3719",
+                "amount": 312.44
+            }, {
+                "id": 1,
+                "date": "16 Mar, 2019",
+                "name": "Paul McCartney",
+                "shipTo": "London, UK",
+                "paymentMethod": "VISA ⠀•••• 2574",
+                "amount": 866.99
+            }, {
+                "id": 2,
+                "date": "16 Mar, 2019",
+                "name": "Tom Scholz",
+                "shipTo": "Boston, MA",
+                "paymentMethod": "MC ⠀•••• 1253",
+                "amount": 100.81
+            }, {
+                "id": 3,
+                "date": "16 Mar, 2019",
+                "name": "Michael Jackson",
+                "shipTo": "Gary, IN",
+                "paymentMethod": "AMEX ⠀•••• 2000",
+                "amount": 654.39
+            }, {
+                "id": 4,
+                "date": "15 Mar, 2019",
+                "name": "Bruce Springsteen",
+                "shipTo": "Long Branch, NJ",
+                "paymentMethod": "VISA ⠀•••• 5919",
+                "amount": 212.79
+            }]
+        }
+    });
 
-  const XOrder = module.enhanceCom(Order);
+    const XOrder = module.enhanceCom(Order);
 
-  return html`
+    return html`
     <${React.Fragment}>  
         <${Typography} component="h2" variant="h6" color="primary" gutterBottom>
             Recent Orders
@@ -367,8 +373,8 @@ export const Orders = props => {
 };
 
 export const Dashboard = props => {
-  const classes = useStyles();
-  return html`
+    const classes = useStyles();
+    return html`
         <${Container} maxWidth="lg" className=${classes.container}>
             <${Grid} container spacing=${3}>
                 <${Grid} item xs=${12} md=${8} lg=${9}>
@@ -398,38 +404,38 @@ export const Dashboard = props => {
 };
 
 const Admin = props => {
-  const classes = useStyles();
-  const {
-    module,
-    router,
-    request,
-    auth
-  } = useModule(props, {
-    "props": {
-      "router": true
-    },
-    "state": {
-      "drawerOpen": true
-    }
-  });
+    const classes = useStyles();
+    const {
+        module,
+        router,
+        request,
+        auth
+    } = useModule(props, {
+      "props" : {
+        "router" : true
+      },
+      "state" : {
+        "drawerOpen" : true
+      }
+    });
 
-  return html`
+    return html`
         <${React.Fragment}>
-            <${CssBaseline}>
-            </${CssBaseline}>
-            <div className=${classes.root}>
-                <${AppBar} position="absolute" className=${classes.appBar + " " + (module.state.drawerOpen ? classes.appBarShift : '')}>
-                    <${Toolbar} className=${classes.toolbar}>
-                        <${IconButton} edge="start" color="inherit" aria-label="open drawer" onClick=${e => module.updateState("drawerOpen", true)} className=${classes.menuButton + " " + (module.state.drawerOpen ? classes.menuButtonHidden : '')}>
+            <${ CssBaseline }>
+            </${ CssBaseline }>
+            <div className=${ classes.root }>
+                <${AppBar} position="absolute" className=${ classes.appBar + " " + (module.state.drawerOpen ? classes.appBarShift : '') }>
+                    <${Toolbar} className=${ classes.toolbar }>
+                        <${IconButton} edge="start" color="inherit" aria-label="open drawer" onClick=${ e => module.updateState("drawerOpen", true) } className=${ classes.menuButton + " " + (module.state.drawerOpen ? classes.menuButtonHidden : '') }>
                             <${Icon}>
                                 dehaze
                             </${Icon}>
                         </${IconButton}>
-                        <${Typography} component="h1" variant="h6" color="inherit" noWrap className=${classes.title}>
+                        <${Typography} component="h1" variant="h6" color="inherit" noWrap className=${ classes.title }>
                             Dashboard
                         </${Typography}>
                         <${IconButton} color="inherit">
-                            <${Badge} badgeContent=${4} color="secondary">
+                            <${Badge} badgeContent=${ 4 } color="secondary">
                                 <${Icon}>
                                     notifications
                                 </${Icon}>
@@ -437,14 +443,14 @@ const Admin = props => {
                         </${IconButton}>
                     </${Toolbar}>
                 </${AppBar}>
-                <${Drawer} variant="permanent" classes=${{
-    paper: `${classes.drawerPaper} ${module.state.drawerOpen ? '' : classes.drawerPaperClose} `
-  }} open=${module.state.drawerOpen}>
-                    <div className=${classes.toolbarIcon}>
-                        <${Avatar} key="6t5jxbkb" style=${{ "position": "absolute", "left": "6px" }}>
+                <${Drawer} variant="permanent" classes=${ {
+        paper: `${classes.drawerPaper} ${module.state.drawerOpen ? '' : classes.drawerPaperClose} `
+    } } open=${ module.state.drawerOpen }>
+                    <div className=${ classes.toolbarIcon }>
+                        <${Avatar} key="6t5jxbkb" style=${ { "position": "absolute", "left": "6px" } }>
                             JL
                         </${Avatar}>
-                        <${IconButton} onClick=${e => module.updateState("drawerOpen", false)}>
+                        <${IconButton} onClick=${ e => module.updateState("drawerOpen", false) }>
                             <${Icon}>
                                 chevron_left
                             </${Icon}>
@@ -453,18 +459,18 @@ const Admin = props => {
                     <${Divider}>
                     </${Divider}>
                     <${List}>
-                        <${MainListItems} selected=${router.relativePath} onSelectItem=${key => router.navigate(key)}>
+                        <${MainListItems} selected=${ router.relativePath } onSelectItem=${ key => router.navigate(key) }>
                         </${MainListItems}>
                     </${List}>
                     <${Divider}>
                     </${Divider}>
                     <${List}>
-                        <${SecondaryListItems} selected=${router.relativePath} onSelectItem=${key => router.navigate(key)}>
+                        <${SecondaryListItems} selected=${ router.relativePath } onSelectItem=${ key => router.navigate(key) }>
                         </${SecondaryListItems}>
                     </${List}>
                 </${Drawer}>
-                <main className=${classes.content}>
-                    <div className=${classes.appBarSpacer}>
+                <main className=${ classes.content }>
+                    <div className=${ classes.appBarSpacer }>
                     </div>
                     <${RelativeRouter} key="ey98gro1">
                         <router path="/" title="others">
@@ -472,9 +478,8 @@ const Admin = props => {
                             </${Dashboard}>
                         </router>
                         <router path="*" title="others">
-                            Content for the relative path - "
-                            ${router.relativePath}
-                            "
+                            Content for the relative path: ${" "}
+                            ${ router.relativePath }
                         </router>
                     </${RelativeRouter}>
                 </main>
