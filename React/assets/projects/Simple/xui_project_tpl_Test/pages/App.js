@@ -449,6 +449,7 @@ const Admin = props => {
 
     return html`
         <${React.Fragment}>
+            <img src=${useModule.resolveURL("./logo4.png")} />
             <${ CssBaseline }>
             </${ CssBaseline }>
             <${Copyright2}>
