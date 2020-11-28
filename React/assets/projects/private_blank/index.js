@@ -1,6 +1,4 @@
 /*jshint esversion: 6 */
-import * as serviceWorker from "./serviceWorker.js";
-
 import { React, html } from "./web_modules/preact-htm/index.js";
 import { ReactDOM } from "./web_modules/preact-htm/index.js";
 import { BrowserRouter, HashRouter as Router, RelativeRouter } from "./web_modules/react-hook-module/plugin_router.js";
@@ -22,9 +20,3 @@ ReactDOM.render( html`
         </${ProvideAuth}>
     </${React.StrictMode}>
 `, document.getElementById("root"));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
-
