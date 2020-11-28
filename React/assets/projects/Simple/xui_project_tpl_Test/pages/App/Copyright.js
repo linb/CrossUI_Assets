@@ -18,13 +18,14 @@ const Copyright = props => {
     const styles_basic = useStyles4basic(props || {});
     return html`
         <${Typography} variant="body2" color="textSecondary" align="center">
+            <img src=${useModule.resolveURL("./logo4.png")} />
             ${ 'Copyright © ' }
             <${Link} color="inherit" href="javascript:;">
                 CrossUI.com
             </${Link}>
             ${ ' ' }
             ${ new Date().getFullYear() }
-            {'.'}
+            ${'.'}
         </${Typography}>
     `;
 };
