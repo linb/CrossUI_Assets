@@ -13,7 +13,7 @@ ReactDOM.render( html`
             <${Router}>
                 <${RelativeRouter}>
                     <router path="/*">
-                        <${App} usemodlue_alias="root"/>
+                        <${App} usemodule_alias="root"/>
                     </router>
                 </${RelativeRouter}>
             </${Router}>
