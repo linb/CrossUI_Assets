@@ -375,31 +375,33 @@ export const Orders = props => {
 export const Dashboard = props => {
     const classes = useStyles();
     return html`
-        <${Container} maxWidth="lg" className=${classes.container}>
-            <${Grid} container spacing=${3}>
-                <${Grid} item xs=${12} md=${8} lg=${9}>
-                    <${Paper} className=${classes.paper + " " + classes.fixedHeight}>
-                        ${"Chart"}
+        <${React.Fragment}>
+            <${Grid} container spacing=${ 3 }>
+                <${Grid} item xs=${ 12 } md=${ 8 } lg=${ 9 }>
+                    <${Paper} className=${ classes.paper + " " + classes.fixedHeight }>
+                        ${ "Chart" }
                         <${Chart}>
                         </${Chart}>
                     </${Paper}>
                 </${Grid}>
-                <${Grid} item xs=${12} md=${4} lg=${3}>
-                    <${Paper} className=${classes.paper + " " + classes.fixedHeight}>
-                        <${Deposits} />
+                <${Grid} item xs=${ 12 } md=${ 4 } lg=${ 3 }>
+                    <${Paper} className=${ classes.paper + " " + classes.fixedHeight }>
+                        <${Deposits} usemodule_alias="Deposits_1" >
+                        </${Deposits}>
                     </${Paper}>
                 </${Grid}>
-                <${Grid} item xs=${12}>
-                    <${Paper} className=${classes.paper}>
-                        <${Orders} />
+                <${Grid} item xs=${ 12 }>
+                    <${Paper} className=${ classes.paper }>
+                        <${Orders} usemodule_alias="Orders_1"  >
+                        </${Orders}>
                     </${Paper}>
                 </${Grid}>
             </${Grid}>
-            <${Box} pt=${4}>
+            <${Box} pt=${ 4 }>
                 <${Copyright}>
                 </${Copyright}>
             </${Box}>
-        </${Container}>
+        </${React.Fragment}>
     `;
 };
 
@@ -411,31 +413,33 @@ const Admin = props => {
         request,
         auth
     } = useModule(props, {
-      "props" : {
-        "router" : true
-      },
-      "state" : {
-        "drawerOpen" : true
-      }
+        "props": {
+            "router": true
+        },
+        "state": {
+            "drawerOpen": true
+        }
     });
+
+    const XOrders = module.enhanceCom(Orders);
 
     return html`
         <${React.Fragment}>
-            <${ CssBaseline }>
-            </${ CssBaseline }>
-            <div className=${ classes.root }>
-                <${AppBar} position="absolute" className=${ classes.appBar + " " + (module.state.drawerOpen ? classes.appBarShift : '') }>
-                    <${Toolbar} className=${ classes.toolbar }>
-                        <${IconButton} edge="start" color="inherit" aria-label="open drawer" onClick=${ e => module.updateState("drawerOpen", true) } className=${ classes.menuButton + " " + (module.state.drawerOpen ? classes.menuButtonHidden : '') }>
+            <${CssBaseline}>
+            </${CssBaseline}>
+            <div className=${classes.root}>
+                <${AppBar} position="absolute" className=${classes.appBar + " " + (module.state.drawerOpen ? classes.appBarShift : '')}>
+                    <${Toolbar} className=${classes.toolbar}>
+                        <${IconButton} edge="start" color="inherit" aria-label="open drawer" onClick=${e => module.updateState("drawerOpen", true)} className=${classes.menuButton + " " + (module.state.drawerOpen ? classes.menuButtonHidden : '')}>
                             <${Icon}>
                                 dehaze
                             </${Icon}>
                         </${IconButton}>
-                        <${Typography} component="h1" variant="h6" color="inherit" noWrap className=${ classes.title }>
+                        <${Typography} component="h1" variant="h6" color="inherit" noWrap className=${classes.title}>
                             Dashboard
                         </${Typography}>
                         <${IconButton} color="inherit">
-                            <${Badge} badgeContent=${ 4 } color="secondary">
+                            <${Badge} badgeContent=${4} color="secondary">
                                 <${Icon}>
                                     notifications
                                 </${Icon}>
@@ -443,14 +447,14 @@ const Admin = props => {
                         </${IconButton}>
                     </${Toolbar}>
                 </${AppBar}>
-                <${Drawer} variant="permanent" classes=${ {
+                <${Drawer} variant="permanent" classes=${{
         paper: `${classes.drawerPaper} ${module.state.drawerOpen ? '' : classes.drawerPaperClose} `
-    } } open=${ module.state.drawerOpen }>
-                    <div className=${ classes.toolbarIcon }>
-                        <${Avatar} key="6t5jxbkb" style=${ { "position": "absolute", "left": "6px" } }>
+    }} open=${module.state.drawerOpen}>
+                    <div className=${classes.toolbarIcon}>
+                        <${Avatar} key="6t5jxbkb" style=${{ "position": "absolute", "left": "6px" }}>
                             JL
                         </${Avatar}>
-                        <${IconButton} onClick=${ e => module.updateState("drawerOpen", false) }>
+                        <${IconButton} onClick=${e => module.updateState("drawerOpen", false)}>
                             <${Icon}>
                                 chevron_left
                             </${Icon}>
@@ -459,29 +463,36 @@ const Admin = props => {
                     <${Divider}>
                     </${Divider}>
                     <${List}>
-                        <${MainListItems} selected=${ router.relativePath } onSelectItem=${ key => router.navigate(key) }>
+                        <${MainListItems} selected=${router.relativePath} onSelectItem=${key => router.navigate(key)}>
                         </${MainListItems}>
                     </${List}>
                     <${Divider}>
                     </${Divider}>
                     <${List}>
-                        <${SecondaryListItems} selected=${ router.relativePath } onSelectItem=${ key => router.navigate(key) }>
+                        <${SecondaryListItems} selected=${router.relativePath} onSelectItem=${key => router.navigate(key)}>
                         </${SecondaryListItems}>
                     </${List}>
                 </${Drawer}>
-                <main className=${ classes.content }>
-                    <div className=${ classes.appBarSpacer }>
+                <main className=${classes.content}>
+                    <div className=${classes.appBarSpacer}>
                     </div>
-                    <${RelativeRouter} key="ey98gro1">
-                        <router path="/" title="others">
-                            <${Dashboard}>
-                            </${Dashboard}>
-                        </router>
-                        <router path="*" title="others">
-                            Content for the relative path: ${" "}
-                            ${ router.relativePath }
-                        </router>
-                    </${RelativeRouter}>
+                    <${Container} maxWidth="lg" className=${ classes.container }>
+                        <${RelativeRouter} key="ey98gro1">
+                            <router path="/" title="others">
+                                <${Dashboard}>
+                                </${Dashboard}>
+                            </router>
+                            <router path="/orders" title="orders">
+                                <${XOrders} usemodule_alias="XOrders_1" usemodule_parent=${module} x_id="xid_3b4pfhrz">
+                                </${XOrders}>
+                            </router>
+                            <router path="*" title="others" key="e8ltrnoq">
+                                Content for the relative path: 
+                                ${" "}
+                                ${router.relativePath}
+                            </router>
+                        </${RelativeRouter}>
+                    </${Container}>                        
                 </main>
             </div>
         </${React.Fragment}>
