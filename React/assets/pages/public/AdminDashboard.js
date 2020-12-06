@@ -360,7 +360,7 @@ export const Orders = props => {
               </${TableRow}>
             </${TableHead}>
             <${TableBody}>
-                <${XOrder} x_id="order" x_iterator="rows" />
+                <${XOrder} x_id="order" x_iterator=${module.state.rows} />
             </${TableBody}>
         </${Table}>
         <div className=${classes.seeMore}>
