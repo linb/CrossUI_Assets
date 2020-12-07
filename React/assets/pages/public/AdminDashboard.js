@@ -414,7 +414,7 @@ const Admin = props => {
         auth
     } = useModule(props, {
         "props": {
-            "router": true
+            "useRouter": true
         },
         "state": {
             "drawerOpen": true
