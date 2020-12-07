@@ -18,7 +18,7 @@ const Module = props => {
         auth
     } = useModule(props, {
         props:{
-            "auth": true
+            "enableAuth": true
         }
     });
     

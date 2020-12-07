@@ -61,7 +61,7 @@ export const SignIn = props => {
         auth
     } = useModule(props, {
       "props" : {
-        "auth" : true
+        "enableAuth" : true
       }
     });
 
@@ -116,7 +116,7 @@ export const SignUp = props => {
         auth
     } = useModule(props, {
         "props": {
-            "auth": true
+            "enableAuth": true
         }
     });
 
@@ -182,7 +182,7 @@ const SignInAndUp = props => {
         auth
     } = useModule(props, {
         "props": {
-            "router": true
+            "enableRouter": true
         },
         "state": {
             "page": "signin"
