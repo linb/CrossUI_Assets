@@ -29,8 +29,8 @@ const Admin = props => {
         auth
     } = useModule(props, {
       "props" : {
-        "router" : true,
-        "auth" : true
+        "enableRouter" : true,
+        "enableAuth" : true
       },
       "actions" : {
         "getFirst10Rows" : {
