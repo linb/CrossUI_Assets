@@ -22,7 +22,7 @@ ReactDOM.render( html`
             <${Router}>
                 <${RelativeRouter}>
                     <router path="/*">
-                        <${App} />
+                        <${App} usemodule_alias="root"/>
                     </router>
                 </${RelativeRouter}>
             </${Router}>

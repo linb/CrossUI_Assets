@@ -270,6 +270,8 @@ const Admin = props => {
       }
     });
 
+    console.log(router);
+    
     const XPageVisitorChart = module.enhanceCom(PageVisitorChart);
     const XOrders = module.enhanceCom(Orders);
 
