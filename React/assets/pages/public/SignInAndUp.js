@@ -179,7 +179,7 @@ const SignInAndUp = props => {
         auth
     } = useModule(props, {
         "props": {
-            "useRouter": true
+            "enableRouter": true
         },
         "state": {
             "page": "signin"
