@@ -7,7 +7,7 @@ import {axios} from "../../web_modules/react-hook-module/plugin_request.js";
 // nologin status: user/token is null
 // login status: user/token is not null/undefiend/empty
 
-const fetchTool = CONF && CONF.mockFetch ? { request : CONF.mockFetch } : axios;
+const fetchTool = CONF && CONF.fetchMocker ? { request : CONF.fetchMocker } : axios;
 
 const signIn = function(params){
     const auth = this;
