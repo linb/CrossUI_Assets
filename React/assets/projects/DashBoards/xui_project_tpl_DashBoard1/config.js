@@ -1,7 +1,7 @@
 /*jshint esversion: 8 */
 export default {
-    baseUrl : "",
-    mockFetch : (options) =>{
+    baseURL : "",
+    fetchMocker : (options) =>{
         let data;
         const mock = (options) => {
             switch(options.url){
