@@ -35,6 +35,6 @@ xui.ini.$DefaultProp={
 
 // [[Constant Data
 xui.constant = {
-    "request_url":"http://www.crossui.com/demo/CRUD/request.php"
+    "request_url":"https://www.crossui.com/demo/CRUD/request.php"
 };
 // ]]Constant Data

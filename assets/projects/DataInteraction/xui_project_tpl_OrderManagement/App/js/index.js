@@ -11,12 +11,12 @@ xui.Class('App', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
-                .setName("api_list")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"orders",
-                    "paras":{
-                        "action":"list"
+                    "key" : "orders",
+                    "paras" : {
+                        "action" : "list"
                     }
                 })
             );
@@ -25,10 +25,11 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.APICaller")
                 .setHost(host,"api_del")
                 .setQueryURL("{xui.constant.request_url")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"orders",
-                    "paras":{
-                        "action":"delete"
+                    "key" : "orders",
+                    "paras" : {
+                        "action" : "delete"
                     }
                 })
             );
@@ -48,47 +49,47 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"ctl_statusbuttons1")
                 .setItems([
                     {
-                        "id":"info",
-                        "caption":"Company Information",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-112px 0 "
+                        "id" : "info",
+                        "caption" : "Company Information",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-112px 0 "
                     },
                     {
-                        "id":"shipping",
-                        "caption":"Shipping Methods",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-64px 0 "
+                        "id" : "shipping",
+                        "caption" : "Shipping Methods",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-64px 0 "
                     },
                     {
-                        "id":"payment",
-                        "caption":"Payment Methods",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-80px 0 "
+                        "id" : "payment",
+                        "caption" : "Payment Methods",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-80px 0 "
                     },
                     {
-                        "id":"employee",
-                        "caption":"Employees",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-16px 0 "
+                        "id" : "employee",
+                        "caption" : "Employees",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-16px 0 "
                     },
                     {
-                        "id":"prd",
-                        "caption":"Products",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-48px 0 "
+                        "id" : "prd",
+                        "caption" : "Products",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-48px 0 "
                     },
                     {
-                        "id":"customer",
-                        "caption":"Customers",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-32px 0 "
+                        "id" : "customer",
+                        "caption" : "Customers",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-32px 0 "
                     },
                     {
-                        "id":"feedback",
-                        "caption":"Provide Feedback",
-                        "itemStyle":"font-weight:bold",
-                        "image":"{/}img/app.png",
-                        "imagePos":"-96px 0 "
+                        "id" : "feedback",
+                        "caption" : "Provide Feedback",
+                        "itemStyle" : "font-weight:bold",
+                        "image" : "{/}img/app.png",
+                        "imagePos" : "-96px 0 "
                     }
                 ])
                 .setLeft("0.5333333333333333em")
@@ -102,124 +103,124 @@ xui.Class('App', 'xui.Module',{
                 .setValue("")
                 .onClick([
                     {
-                        "desc":"info",
-                        "type":"page",
-                        "target":"App.companyInfo",
-                        "args":[ ],
-                        "method":"show",
-                        "event":2,
-                        "conditions":[
+                        "desc" : "info",
+                        "type" : "page",
+                        "target" : "App.companyInfo",
+                        "args" : [ ],
+                        "method" : "show",
+                        "event" : 2,
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"info"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "info"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"shipping",
-                        "type":"page",
-                        "target":"App.shippingMethods",
-                        "args":[ ],
-                        "method":"show",
-                        "conditions":[
+                        "desc" : "shipping",
+                        "type" : "page",
+                        "target" : "App.shippingMethods",
+                        "args" : [ ],
+                        "method" : "show",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"shipping"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "shipping"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"payment",
-                        "type":"page",
-                        "target":"App.paymentMethods",
-                        "args":[ ],
-                        "method":"show",
-                        "conditions":[
+                        "desc" : "payment",
+                        "type" : "page",
+                        "target" : "App.paymentMethods",
+                        "args" : [ ],
+                        "method" : "show",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"payment"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "payment"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"employee",
-                        "type":"page",
-                        "target":"App.employees",
-                        "args":[ ],
-                        "method":"show",
-                        "conditions":[
+                        "desc" : "employee",
+                        "type" : "page",
+                        "target" : "App.employees",
+                        "args" : [ ],
+                        "method" : "show",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"employee"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "employee"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"prd",
-                        "type":"page",
-                        "target":"App.products",
-                        "args":[ ],
-                        "method":"show",
-                        "conditions":[
+                        "desc" : "prd",
+                        "type" : "page",
+                        "target" : "App.products",
+                        "args" : [ ],
+                        "method" : "show",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"prd"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "prd"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"customer",
-                        "type":"page",
-                        "target":"App.customers",
-                        "args":[ ],
-                        "method":"show",
-                        "conditions":[
+                        "desc" : "customer",
+                        "type" : "page",
+                        "target" : "App.customers",
+                        "args" : [ ],
+                        "method" : "show",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"customer"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "customer"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"feedback",
-                        "type":"other",
-                        "target":"url",
-                        "args":[
+                        "desc" : "feedback",
+                        "type" : "other",
+                        "target" : "url",
+                        "args" : [
                             "support@crossui.com",
                             {
-                                "subject":"Feedback on CrossUI Order Management"
+                                "subject" : "Feedback on CrossUI Order Management"
                             }
                         ],
-                        "method":"mailTo",
-                        "conditions":[
+                        "method" : "mailTo",
+                        "conditions" : [
                             {
-                                "left":"{args[1].id}",
-                                "symbol":"=",
-                                "right":"feedback"
+                                "left" : "{args[1].id}",
+                                "symbol" : "=",
+                                "right" : "feedback"
                             }
                         ],
-                        "timeout":0,
-                        "return":false
+                        "timeout" : 0,
+                        "return" : false
                     }
                 ])
                 .setCustomStyle({
-                    "ITEM":{
-                        "text-align":"left"
+                    "ITEM" : {
+                        "text-align" : "left"
                     }
                 })
-                );
+            );
             
             host.ctl_panel11.append(
                 xui.create("xui.UI.Image")
@@ -227,7 +228,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("2.7555555555555555em")
                 .setTop("22.333333333333332em")
                 .setSrc("{/}img/setup.png")
-                );
+            );
             
             host.ctl_panel11.append(
                 xui.create("xui.UI.Link")
@@ -239,22 +240,22 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Download source code")
                 .onClick([
                     {
-                        "desc":"Action 1",
-                        "type":"other",
-                        "target":"url",
-                        "args":[
+                        "desc" : "Action 1",
+                        "type" : "other",
+                        "target" : "url",
+                        "args" : [
                             "http://www.crossui.com/download.html"
                         ],
-                        "method":"open--_blank",
-                        "event":1
+                        "method" : "open--_blank",
+                        "event" : 1
                     }
                 ])
                 .setCustomStyle({
-                    "KEY":{
-                        "font-style":"italic"
+                    "KEY" : {
+                        "font-style" : "italic"
                     }
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.Block")
@@ -272,7 +273,7 @@ xui.Class('App', 'xui.Module',{
                 .setHeight("4.444444444444445em")
                 .setRight("0.35555555555555557em")
                 .setPanelBgClr("transparent")
-                );
+            );
             
             host.ctl_pane13.append(
                 xui.create("xui.UI.Label")
@@ -281,11 +282,11 @@ xui.Class('App', 'xui.Module',{
                 .setTop("2.4em")
                 .setCaption("Powered by ")
                 .setCustomStyle({
-                    "KEY":{
-                        "font-style":"italic"
+                    "KEY" : {
+                        "font-style" : "italic"
                     }
                 })
-                );
+            );
             
             host.ctl_pane13.append(
                 xui.create("xui.UI.Image")
@@ -295,22 +296,22 @@ xui.Class('App', 'xui.Module',{
                 .setSrc("http://www.crossui.com/img/logo2.png")
                 .onClick([
                     {
-                        "desc":"open",
-                        "type":"other",
-                        "target":"url",
-                        "args":[
+                        "desc" : "open",
+                        "type" : "other",
+                        "target" : "url",
+                        "args" : [
                             "http://www.crossui.com"
                         ],
-                        "method":"open--_blank",
-                        "event":1
+                        "method" : "open--_blank",
+                        "event" : 1
                     }
                 ])
                 .setCustomStyle({
-                    "KEY":{
-                        "cursor":"pointer"
+                    "KEY" : {
+                        "cursor" : "pointer"
                     }
                 })
-                );
+            );
             
             host.ctl_pane13.append(
                 xui.create("xui.UI.Label")
@@ -318,7 +319,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("16.88888888888889em")
                 .setTop("2.2222222222222223em")
                 .setCaption("Theme:")
-                );
+            );
             
             host.ctl_pane13.append(
                 xui.create("xui.UI.ComboInput")
@@ -330,38 +331,38 @@ xui.Class('App', 'xui.Module',{
                 .setType("listbox")
                 .setItems([
                     {
-                        "id":"default",
-                        "caption":"Default"
+                        "id" : "default",
+                        "caption" : "Default"
                     },
                     {
-                        "id":"vista",
-                        "caption":"Vista"
+                        "id" : "vista",
+                        "caption" : "Vista"
                     },
                     {
-                        "id":"moonify",
-                        "caption":"Moonify"
+                        "id" : "moonify",
+                        "caption" : "Moonify"
                     },
                     {
-                        "id":"army",
-                        "caption":"Army"
+                        "id" : "army",
+                        "caption" : "Army"
                     }
                 ])
                 .setValue("default")
                 .onChange([
                     {
-                        "desc":"Action 1",
-                        "type":"other",
-                        "target":"callback",
-                        "args":[
+                        "desc" : "Action 1",
+                        "type" : "other",
+                        "target" : "callback",
+                        "args" : [
                             "{xui.setTheme()}",
                             undefined,
                             undefined,
                             "{args[2]}"
                         ],
-                        "method":"call"
+                        "method" : "call"
                     }
                 ])
-                );
+            );
             
             host.ctl_block3.append(
                 xui.create("xui.UI.Image")
@@ -370,26 +371,26 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.8888888888888888em")
                 .setSrc("{/}img/order.png")
                 .setCustomStyle({
-                    "KEY":{
-                        "$gradient":{
-                            "stops":[
+                    "KEY" : {
+                        "$gradient" : {
+                            "stops" : [
                                 {
-                                    "pos":"52%",
-                                    "clr":"#FFFF00"
+                                    "pos" : "52%",
+                                    "clr" : "#FFFF00"
                                 },
                                 {
-                                    "pos":"100%",
-                                    "clr":"#FFFFFF",
-                                    "opacity":0
+                                    "pos" : "100%",
+                                    "clr" : "#FFFFFF",
+                                    "opacity" : 0
                                 }
                             ],
-                            "type":"radial",
-                            "orient":"C"
+                            "type" : "radial",
+                            "orient" : "C"
                         },
-                        "transform":"rotate(331deg) scale(1,1) skew(0deg,0deg) translate(0px,0px)"
+                        "transform" : "rotate(331deg) scale(1,1) skew(0deg,0deg) translate(0px,0px)"
                     }
                 })
-                );
+            );
             
             host.ctl_block3.append(
                 xui.create("xui.UI.Label")
@@ -398,14 +399,14 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.7916666666666666em")
                 .setCaption("Manage Orders")
                 .setCustomStyle({
-                    "KEY":{
-                        "font-size":"18pt",
-                        "font-weight":"normal",
-                        "color":"#000080",
-                        "text-shadow":"0px 0px 8px #20B2AA"
+                    "KEY" : {
+                        "font-size" : "18pt",
+                        "font-weight" : "normal",
+                        "color" : "#000080",
+                        "text-shadow" : "0px 0px 8px #20B2AA"
                     }
                 })
-                );
+            );
             
             append(
                 xui.create("xui.UI.Block")
@@ -418,351 +419,351 @@ xui.Class('App', 'xui.Module',{
                 xui.create("xui.Module.PageGrid", "xui.Module")
                 .setHost(host,"module_grideditor1")
                 .setProperties({
-                    "__inner_coms_prf__":{
-                        "xui_msgs1":{
-                            "properties":{
-                                "msgType":"orders"
+                    "__inner_coms_prf__" : {
+                        "xui_msgs1" : {
+                            "properties" : {
+                                "msgType" : "orders"
                             }
                         },
-                        "grid":{
-                            "properties":{
-                                "header":[
+                        "grid" : {
+                            "properties" : {
+                                "header" : [
                                     {
-                                        "id":"OrderID",
-                                        "caption":"Order ID",
-                                        "width":"4em",
-                                        "type":"input"
+                                        "id" : "OrderID",
+                                        "caption" : "Order ID",
+                                        "width" : "4em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"CustomerID",
-                                        "caption":"CustomerID",
-                                        "width":"3em",
-                                        "hidden":true,
-                                        "type":"input"
+                                        "id" : "CustomerID",
+                                        "caption" : "CustomerID",
+                                        "width" : "3em",
+                                        "hidden" : true,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"CompanyName",
-                                        "caption":"Company Name",
-                                        "width":"8em",
-                                        "type":"input"
+                                        "id" : "CompanyName",
+                                        "caption" : "Company Name",
+                                        "width" : "8em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"EmployeeID",
-                                        "caption":"EmployeeID",
-                                        "width":"3em",
-                                        "hidden":true,
-                                        "type":"input"
+                                        "id" : "EmployeeID",
+                                        "caption" : "EmployeeID",
+                                        "width" : "3em",
+                                        "hidden" : true,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"EmployeeName",
-                                        "caption":"Employee Name",
-                                        "width":"8em",
-                                        "type":"input"
+                                        "id" : "EmployeeName",
+                                        "caption" : "Employee Name",
+                                        "width" : "8em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"OrderDate",
-                                        "caption":"Order Date",
-                                        "width":"8em",
-                                        "type":"date"
+                                        "id" : "OrderDate",
+                                        "caption" : "Order Date",
+                                        "width" : "8em",
+                                        "type" : "date"
                                     },
                                     {
-                                        "id":"PurchaseOrderNumber",
-                                        "caption":"Purchase Order Number",
-                                        "width":"8em",
-                                        "type":"number"
+                                        "id" : "PurchaseOrderNumber",
+                                        "caption" : "Purchase Order Number",
+                                        "width" : "8em",
+                                        "type" : "number"
                                     },
                                     {
-                                        "id":"ShipDate",
-                                        "caption":"Ship Date",
-                                        "width":"8em",
-                                        "type":"date"
+                                        "id" : "ShipDate",
+                                        "caption" : "Ship Date",
+                                        "width" : "8em",
+                                        "type" : "date"
                                     },
                                     {
-                                        "id":"ShippingMethodID",
-                                        "caption":"ShippingMethodID",
-                                        "width":"8em",
-                                        "hidden":true,
-                                        "type":"input"
+                                        "id" : "ShippingMethodID",
+                                        "caption" : "ShippingMethodID",
+                                        "width" : "8em",
+                                        "hidden" : true,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"ShippingMethod",
-                                        "caption":"Shipping Method",
-                                        "width":"8em",
-                                        "type":"input"
+                                        "id" : "ShippingMethod",
+                                        "caption" : "Shipping Method",
+                                        "width" : "8em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"PaymentMethodID",
-                                        "caption":"PaymentMethodID",
-                                        "width":"8em",
-                                        "hidden":true,
-                                        "type":"input"
+                                        "id" : "PaymentMethodID",
+                                        "caption" : "PaymentMethodID",
+                                        "width" : "8em",
+                                        "hidden" : true,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"PaymentMethod",
-                                        "caption":"Payment Method",
-                                        "width":"8em",
-                                        "type":"input"
+                                        "id" : "PaymentMethod",
+                                        "caption" : "Payment Method",
+                                        "width" : "8em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"FreightCharge",
-                                        "caption":"Freight Charge",
-                                        "width":"8em",
-                                        "type":"currency"
+                                        "id" : "FreightCharge",
+                                        "caption" : "Freight Charge",
+                                        "width" : "8em",
+                                        "type" : "currency"
                                     },
                                     {
-                                        "id":"Taxes",
-                                        "caption":"Taxes",
-                                        "width":"8em",
-                                        "type":"currency"
+                                        "id" : "Taxes",
+                                        "caption" : "Taxes",
+                                        "width" : "8em",
+                                        "type" : "currency"
                                     },
                                     {
-                                        "id":"PaymentReceived",
-                                        "caption":"Payment Received",
-                                        "width":"8em",
-                                        "type":"checkbox"
+                                        "id" : "PaymentReceived",
+                                        "caption" : "Payment Received",
+                                        "width" : "8em",
+                                        "type" : "checkbox"
                                     },
                                     {
-                                        "id":"Comment",
-                                        "caption":"Comment",
-                                        "width":"12em",
-                                        "type":"textarea"
+                                        "id" : "Comment",
+                                        "caption" : "Comment",
+                                        "width" : "12em",
+                                        "type" : "textarea"
                                     }
                                 ],
-                                "uidColumn":"OrderID",
-                                "freezedColumn":3,
-                                "colHidable":false
+                                "uidColumn" : "OrderID",
+                                "freezedColumn" : 3,
+                                "colHidable" : false
                             }
                         }
                     }
                 })
                 .setEvents({
-                    "onListRecords":[
+                    "onListRecords" : [
                         {
-                            "desc":"set page",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set page",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.page"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"set size",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set size",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[1]}",
                                 "paras.size"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"if ok, callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "if ok, callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[2]()}",
                                 undefined,
                                 undefined,
                                 "{temp.okData.data}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onOpenRecord":[
+                    "onOpenRecord" : [
                         {
-                            "desc":"set prop",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[
+                            "desc" : "set prop",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [
                                 {
-                                    "recordId":"{args[0]}"
+                                    "recordId" : "{args[0]}"
                                 }
                             ],
-                            "method":"setProperties"
+                            "method" : "setProperties"
                         },
                         {
-                            "desc":"show",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "show",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [ ],
+                            "method" : "show"
                         },
                         {
-                            "desc":"set hook",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[
+                            "desc" : "set hook",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "updateCallback",
                                 "{args[2]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         }
                     ],
-                    "onDeleteRecords":[
+                    "onDeleteRecords" : [
                         {
-                            "desc":"set api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[
-                                "{page.api_del.setQueryData()}",
+                            "desc" : "set api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [
+                                "{page.api_del.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.ids"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[1]()}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onMessageServiceReceived":[
+                    "onMessageServiceReceived" : [
                         {
-                            "desc":"set",
-                            "type":"module",
-                            "target":"module_grideditor1",
-                            "args":[
+                            "desc" : "set",
+                            "type" : "module",
+                            "target" : "module_grideditor1",
+                            "args" : [
                                 "{page.module_grideditor1.updateRow()}",
                                 undefined,
                                 undefined,
                                 "{args[1]}",
                                 "{args[2]}"
                             ],
-                            "method":"callFunction",
-                            "conditions":[
+                            "method" : "callFunction",
+                            "conditions" : [
                                 {
-                                    "left":"{args[0]}",
-                                    "symbol":"=",
-                                    "right":"set"
+                                    "left" : "{args[0]}",
+                                    "symbol" : "=",
+                                    "right" : "set"
                                 }
                             ],
-                            "redirection":"other:callback:call"
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"create",
-                            "type":"module",
-                            "target":"module_grideditor1",
-                            "args":[
+                            "desc" : "create",
+                            "type" : "module",
+                            "target" : "module_grideditor1",
+                            "args" : [
                                 "{page.module_grideditor1.addRow()}",
                                 undefined,
                                 undefined,
                                 undefined,
                                 "{args[2]}"
                             ],
-                            "method":"callFunction",
-                            "conditions":[
+                            "method" : "callFunction",
+                            "conditions" : [
                                 {
-                                    "left":"{args[0]}",
-                                    "symbol":"=",
-                                    "right":"create"
+                                    "left" : "{args[0]}",
+                                    "symbol" : "=",
+                                    "right" : "create"
                                 }
                             ],
-                            "redirection":"other:callback:call"
+                            "redirection" : "other:callback:call"
                         }
                     ],
-                    "onCreateRecords":[
+                    "onCreateRecords" : [
                         {
-                            "desc":"set prop",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[
+                            "desc" : "set prop",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [
                                 {
-                                    "callback":"{args[0]}"
+                                    "callback" : "{args[0]}"
                                 }
                             ],
-                            "method":"setProperties"
+                            "method" : "setProperties"
                         },
                         {
-                            "desc":"crete order",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "crete order",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [ ],
+                            "method" : "show"
                         },
                         {
-                            "desc":"set create hook",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[
+                            "desc" : "set create hook",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "createCallback",
                                 "{args[0]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         },
                         {
-                            "desc":"set udpate hook",
-                            "type":"page",
-                            "target":"App.order",
-                            "args":[
+                            "desc" : "set udpate hook",
+                            "type" : "page",
+                            "target" : "App.order",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "updateCallback",
                                 "{args[1]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         }
                     ]
                 })
-                );
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio

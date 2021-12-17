@@ -10,12 +10,12 @@ xui.Class('App.employees', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
-                .setName("api_list")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"employees",
-                    "paras":{
-                        "action":"list"
+                    "key" : "employees",
+                    "paras" : {
+                        "action" : "list"
                     }
                 })
             );
@@ -23,19 +23,14 @@ xui.Class('App.employees', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_del")
-                .setName("api_del")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"employees",
-                    "paras":{
-                        "action":"delete"
+                    "key" : "employees",
+                    "paras" : {
+                        "action" : "delete"
                     }
                 })
-            );
-            
-            append(
-                xui.create("xui.MessageService")
-                .setHost(host,"xui_msgsvr")
             );
             
             append(
@@ -63,248 +58,248 @@ xui.Class('App.employees', 'xui.Module',{
                 .setWidth("50.25em")
                 .setHeight("23.583333333333332em")
                 .setBorderType("inset")
-                );
+            );
             
             host.mainPane.append(
                 xui.create("xui.Module.PageGrid", "xui.Module")
                 .setHost(host,"module_grideditor1")
                 .setProperties({
-                    "valueColumn":"EmployeeID",
-                    "captionExpression":"LastName FirstName",
-                    "__inner_coms_prf__":{
-                        "grid":{
-                            "properties":{
-                                "header":[
+                    "valueColumn" : "EmployeeID",
+                    "captionExpression" : "LastName FirstName",
+                    "__inner_coms_prf__" : {
+                        "grid" : {
+                            "properties" : {
+                                "header" : [
                                     {
-                                        "id":"EmployeeID",
-                                        "caption":"Employee ID",
-                                        "width":"4em",
-                                        "type":"input"
+                                        "id" : "EmployeeID",
+                                        "caption" : "Employee ID",
+                                        "width" : "4em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"FirstName",
-                                        "caption":"First Name",
-                                        "width":"10em",
-                                        "hidden":false,
-                                        "type":"input"
+                                        "id" : "FirstName",
+                                        "caption" : "First Name",
+                                        "width" : "10em",
+                                        "hidden" : false,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"LastName",
-                                        "caption":"Last Name",
-                                        "width":"10em",
-                                        "type":"input"
+                                        "id" : "LastName",
+                                        "caption" : "Last Name",
+                                        "width" : "10em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"Title",
-                                        "caption":"Title",
-                                        "flexSize":true,
-                                        "width":"14em",
-                                        "hidden":false,
-                                        "type":"input"
+                                        "id" : "Title",
+                                        "caption" : "Title",
+                                        "flexSize" : true,
+                                        "width" : "14em",
+                                        "hidden" : false,
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"WorkPhone",
-                                        "caption":"WorkPhone",
-                                        "flexSize":false,
-                                        "width":"8em",
-                                        "type":"input"
+                                        "id" : "WorkPhone",
+                                        "caption" : "WorkPhone",
+                                        "flexSize" : false,
+                                        "width" : "8em",
+                                        "type" : "input"
                                     }
                                 ],
-                                "uidColumn":"EmployeeID",
-                                "freezedColumn":1,
-                                "colHidable":false
+                                "uidColumn" : "EmployeeID",
+                                "freezedColumn" : 1,
+                                "colHidable" : false
                             }
                         }
                     }
                 })
                 .setEvents({
-                    "onListRecords":[
+                    "onListRecords" : [
                         {
-                            "desc":"set page",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set page",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.page"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"set size",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set size",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[1]}",
                                 "paras.size"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"if ok, callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "if ok, callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[2]()}",
                                 undefined,
                                 undefined,
                                 "{temp.okData.data}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onOpenRecord":[
+                    "onOpenRecord" : [
                         {
-                            "desc":"set prop",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[
+                            "desc" : "set prop",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [
                                 {
-                                    "recordId":"{args[0]}"
+                                    "recordId" : "{args[0]}"
                                 }
                             ],
-                            "method":"setProperties"
+                            "method" : "setProperties"
                         },
                         {
-                            "desc":"show",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "show",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [ ],
+                            "method" : "show"
                         },
                         {
-                            "desc":"set hook",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[
+                            "desc" : "set hook",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "updateCallback",
                                 "{args[2]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         }
                     ],
-                    "onDeleteRecords":[
+                    "onDeleteRecords" : [
                         {
-                            "desc":"set api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[
-                                "{page.api_del.setQueryData()}",
+                            "desc" : "set api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [
+                                "{page.api_del.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.ids"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[1]()}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onCreateRecords":[
+                    "onCreateRecords" : [
                         {
-                            "desc":"set prop",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[
+                            "desc" : "set prop",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [
                                 {
-                                    "callback":"{args[0]}"
+                                    "callback" : "{args[0]}"
                                 }
                             ],
-                            "method":"setProperties"
+                            "method" : "setProperties"
                         },
                         {
-                            "desc":"crete order",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "crete order",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [ ],
+                            "method" : "show"
                         },
                         {
-                            "desc":"set create hook",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[
+                            "desc" : "set create hook",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "createCallback",
                                 "{args[0]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         },
                         {
-                            "desc":"set udpate hook",
-                            "type":"page",
-                            "target":"App.employee",
-                            "args":[
+                            "desc" : "set udpate hook",
+                            "type" : "page",
+                            "target" : "App.employee",
+                            "args" : [
                                 "{page.setHooks()}",
                                 undefined,
                                 undefined,
                                 "updateCallback",
                                 "{args[1]}"
                             ],
-                            "method":"setHooks",
-                            "redirection":"page::"
+                            "method" : "setHooks",
+                            "redirection" : "page::"
                         }
                     ],
-                    "onSelectRecord":[
+                    "onSelectRecord" : [
                         {
-                            "desc":"callback",
-                            "type":"control",
-                            "target":"xui_msgsvr",
-                            "args":[
+                            "desc" : "callback",
+                            "type" : "control",
+                            "target" : "xui_msgsvr",
+                            "args" : [
                                 "{page.xui_msgsvr.broadcast()}",
                                 undefined,
                                 undefined,
@@ -314,19 +309,19 @@ xui.Class('App.employees', 'xui.Module',{
                                 "{args[1]}",
                                 ""
                             ],
-                            "method":"broadcast",
-                            "redirection":"other:callback:call"
+                            "method" : "broadcast",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"close",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy"
+                            "desc" : "close",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy"
                         }
                     ]
                 })
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -337,15 +332,20 @@ xui.Class('App.employees', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"destroy",
-                        "type":"page",
-                        "target":"App.employees",
-                        "args":[ ],
-                        "method":"destroy",
-                        "event":1
+                        "desc" : "destroy",
+                        "type" : "page",
+                        "target" : "App.employees",
+                        "args" : [ ],
+                        "method" : "destroy",
+                        "event" : 1
                     }
                 ])
-                );
+            );
+            
+            append(
+                xui.create("xui.MessageService")
+                .setHost(host,"xui_msgsvr")
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio

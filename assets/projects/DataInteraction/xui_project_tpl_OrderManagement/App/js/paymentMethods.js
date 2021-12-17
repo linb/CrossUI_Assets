@@ -9,12 +9,12 @@ xui.Class('App.paymentMethods', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_create")
-                .setName("api_create")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"paymentmethods",
-                    "paras":{
-                        "action":"create"
+                    "key" : "paymentmethods",
+                    "paras" : {
+                        "action" : "create"
                     }
                 })
             );
@@ -22,12 +22,12 @@ xui.Class('App.paymentMethods', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
-                .setName("api_list")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"paymentmethods",
-                    "paras":{
-                        "action":"getList"
+                    "key" : "paymentmethods",
+                    "paras" : {
+                        "action" : "getList"
                     }
                 })
             );
@@ -35,12 +35,12 @@ xui.Class('App.paymentMethods', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_delete")
-                .setName("api_delete")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"paymentmethods",
-                    "paras":{
-                        "action":"delete"
+                    "key" : "paymentmethods",
+                    "paras" : {
+                        "action" : "delete"
                     }
                 })
             );
@@ -48,12 +48,12 @@ xui.Class('App.paymentMethods', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_update")
-                .setName("api_update")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"paymentmethods",
-                    "paras":{
-                        "action":"update"
+                    "key" : "paymentmethods",
+                    "paras" : {
+                        "action" : "update"
                     }
                 })
             );
@@ -83,7 +83,7 @@ xui.Class('App.paymentMethods', 'xui.Module',{
                 .setWidth("18.583333333333332em")
                 .setHeight("15.25em")
                 .setBorderType("inset")
-                );
+            );
             
             host.ctl_block159.append(
                 xui.create("xui.UI.TreeGrid")
@@ -98,293 +98,293 @@ xui.Class('App.paymentMethods', 'xui.Module',{
                 .setColSortable(false)
                 .setHeader([
                     {
-                        "id":"PaymentMethodID",
-                        "caption":"ID",
-                        "width":"2em",
-                        "type":"label"
+                        "id" : "PaymentMethodID",
+                        "caption" : "ID",
+                        "width" : "1.980952380952381em",
+                        "type" : "label"
                     },
                     {
-                        "id":"PaymentMethod",
-                        "caption":"Shipping Method",
-                        "flexSize":true,
-                        "width":"13.75em",
-                        "type":"input"
+                        "id" : "PaymentMethod",
+                        "caption" : "Shipping Method",
+                        "flexSize" : true,
+                        "width" : "13.714285714285714em",
+                        "type" : "input"
                     }
                 ])
                 .setTreeMode(false)
-                .setHotRowMode("show")
+                .setHotRowMode("after")
                 .setHotRowCellCap("( * )")
                 .setHotRowRequired("PaymentMethod")
                 .afterHotRowAdded([
                     {
-                        "desc":"adjust data",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "adjust data",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.getRowMap()}",
                             "temp",
                             "rowMap",
                             "{args[1].id}"
                         ],
-                        "method":"getRowMap",
-                        "redirection":"other:callback:call"
+                        "method" : "getRowMap",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"set create API",
-                        "type":"control",
-                        "target":"api_create",
-                        "args":[
-                            "{page.api_create.setQueryData()}",
+                        "desc" : "set create API",
+                        "type" : "control",
+                        "target" : "api_create",
+                        "args" : [
+                            "{page.api_create.setQueryArgs()}",
                             "none",
                             "",
                             "{temp.rowMap}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call"
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"call create API",
-                        "type":"control",
-                        "target":"api_create",
-                        "args":[ ],
-                        "method":"invoke",
-                        "onOK":0,
-                        "onKO":1
+                        "desc" : "call create API",
+                        "type" : "control",
+                        "target" : "api_create",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"update row data",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "update row data",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.setRowMap()}",
                             "none",
                             "",
                             "{args[1].id}",
                             {
-                                "PaymentMethodID":"{temp.okData.data}"
+                                "PaymentMethodID" : "{temp.okData.data}"
                             }
                         ],
-                        "method":"setRowMap",
-                        "conditions":[
+                        "method" : "setRowMap",
+                        "conditions" : [
                             {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{temp.okData}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     }
                 ])
                 .afterCellUpdated([
                     {
-                        "desc":"ignore hot row",
-                        "type":"none",
-                        "target":"none",
-                        "args":[ ],
-                        "method":"none",
-                        "conditions":[
+                        "desc" : "ignore hot row",
+                        "type" : "none",
+                        "target" : "none",
+                        "args" : [ ],
+                        "method" : "none",
+                        "conditions" : [
                             {
-                                "left":"{args[3]}",
-                                "symbol":"=",
-                                "right":"{true}"
+                                "left" : "{args[3]}",
+                                "symbol" : "=",
+                                "right" : "{true}"
                             }
                         ],
-                        "return":false
+                        "return" : false
                     },
                     {
-                        "desc":"1.get cells data",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "1.get cells data",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.getRowMap()}",
                             "temp",
                             "cells"
                         ],
-                        "method":"getRowMap",
-                        "redirection":"other:callback:call"
+                        "method" : "getRowMap",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"1.get row",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "1.get row",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.getRowbyCell()}",
                             "temp",
                             "row",
                             "{args[1]}"
                         ],
-                        "method":"getRowbyCell",
-                        "redirection":"other:callback:call"
+                        "method" : "getRowbyCell",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"2.set update API",
-                        "type":"control",
-                        "target":"api_update",
-                        "args":[
-                            "{page.api_update.setQueryData()}",
+                        "desc" : "2.set update API",
+                        "type" : "control",
+                        "target" : "api_update",
+                        "args" : [
+                            "{page.api_update.setQueryArgs()}",
                             "none",
                             "",
                             "{temp.cells.PaymentMethodID}",
                             "paras.id"
                         ],
-                        "method":"setQueryData",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"2.set update API 2",
-                        "type":"control",
-                        "target":"api_update",
-                        "args":[
-                            "{page.api_update.setQueryData()}",
+                        "desc" : "2.set update API 2",
+                        "type" : "control",
+                        "target" : "api_update",
+                        "args" : [
+                            "{page.api_update.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{temp.cells}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"2.call update API",
-                        "type":"control",
-                        "target":"api_update",
-                        "args":[ ],
-                        "method":"invoke",
-                        "conditions":[
+                        "desc" : "2.call update API",
+                        "type" : "control",
+                        "target" : "api_update",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             }
                         ],
-                        "onOK":0,
-                        "onKO":1
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"udpate cell",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "udpate cell",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.updateCellValue()}",
                             undefined,
                             undefined,
                             "{args[1]}"
                         ],
-                        "method":"updateCellValue",
-                        "conditions":[
+                        "method" : "updateCellValue",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"non-empty",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "non-empty",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"3.set delete API",
-                        "type":"control",
-                        "target":"api_delete",
-                        "args":[
-                            "{page.api_delete.setQueryData()}",
+                        "desc" : "3.set delete API",
+                        "type" : "control",
+                        "target" : "api_delete",
+                        "args" : [
+                            "{page.api_delete.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{temp.cells.PaymentMethodID}",
                             "paras.id"
                         ],
-                        "method":"setQueryData",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "empty",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"3.call delete API",
-                        "type":"control",
-                        "target":"api_delete",
-                        "args":[ ],
-                        "method":"invoke",
-                        "conditions":[
+                        "desc" : "3.call delete API",
+                        "type" : "control",
+                        "target" : "api_delete",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "empty",
+                                "right" : ""
                             }
                         ],
-                        "onOK":0,
-                        "onKO":1
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"3.delete row",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "3.delete row",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{temp.row}"
                         ],
-                        "method":"removeRows",
-                        "conditions":[
+                        "method" : "removeRows",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "empty",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.error}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{temp.okData.error}",
+                                "symbol" : "empty",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"reset cell",
-                        "type":"control",
-                        "target":"ctl_treegrid91",
-                        "args":[
+                        "desc" : "reset cell",
+                        "type" : "control",
+                        "target" : "ctl_treegrid91",
+                        "args" : [
                             "{page.ctl_treegrid91.resetCellValue()}",
                             undefined,
                             undefined,
                             "{args[1]}"
                         ],
-                        "method":"resetCellValue",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "resetCellValue",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{args[1].value}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{args[1].value}",
+                                "symbol" : "empty",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"empty",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "empty",
+                                "right" : ""
                             }
                         ]
                     }
                 ])
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -395,15 +395,15 @@ xui.Class('App.paymentMethods', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"Action 1",
-                        "type":"page",
-                        "target":"App.paymentMethods",
-                        "args":[ ],
-                        "method":"destroy",
-                        "event":1
+                        "desc" : "Action 1",
+                        "type" : "page",
+                        "target" : "App.paymentMethods",
+                        "args" : [ ],
+                        "method" : "destroy",
+                        "event" : 1
                     }
                 ])
-                );
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio

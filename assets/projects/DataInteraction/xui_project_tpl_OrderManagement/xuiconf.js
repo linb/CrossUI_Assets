@@ -2,7 +2,7 @@
 
 // [[Page Appearance
 xui.ini.$PageAppearance = {
-    "theme":"default"
+    "theme" : "default"
 };
 // ]]Page Appearance
 
@@ -12,9 +12,9 @@ xui.ini.$PageAppearance = {
 
 // [[Develop Env Setting
 xui.ini.$DevEnv = {
-    "designViewConf":{
-        "width":960,
-        "height":600
+    "designViewConf" : {
+        "width" : 960,
+        "height" : 600
     }
 };
 // ]]Develop Env Setting
@@ -80,7 +80,7 @@ xui.$cache.functions = {
 
 // [[Constant Data
 xui.constant = {
-    "request_url":"http://www.crossui.com/demo/OrderManagement/request.php"
+    "request_url":"https://www.crossui.com/demo/OrderManagement/request.php"
 };
 // ]]Constant Data
 

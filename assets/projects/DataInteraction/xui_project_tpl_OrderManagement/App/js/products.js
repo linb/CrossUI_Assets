@@ -9,12 +9,12 @@ xui.Class('App.products', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_list")
-                .setName("api_list")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"products",
-                    "paras":{
-                        "action":"list"
+                    "key" : "products",
+                    "paras" : {
+                        "action" : "list"
                     }
                 })
             );
@@ -22,19 +22,14 @@ xui.Class('App.products', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_del")
-                .setName("api_del")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"products",
-                    "paras":{
-                        "action":"delete"
+                    "key" : "products",
+                    "paras" : {
+                        "action" : "delete"
                     }
                 })
-            );
-            
-            append(
-                xui.create("xui.MessageService")
-                .setHost(host,"xui_msgsvr")
             );
             
             append(
@@ -62,199 +57,199 @@ xui.Class('App.products', 'xui.Module',{
                 .setWidth("38.666666666666664em")
                 .setHeight("16.916666666666668em")
                 .setBorderType("inset")
-                );
+            );
             
             host.mainPane.append(
                 xui.create("xui.Module.PageGrid", "xui.Module")
                 .setHost(host,"module_grideditor1")
                 .setProperties({
-                    "valueColumn":"ProductID",
-                    "captionExpression":"ProductName",
-                    "__inner_coms_prf__":{
-                        "grid":{
-                            "properties":{
-                                "header":[
+                    "valueColumn" : "ProductID",
+                    "captionExpression" : "ProductName",
+                    "__inner_coms_prf__" : {
+                        "grid" : {
+                            "properties" : {
+                                "header" : [
                                     {
-                                        "id":"ProductID",
-                                        "caption":"Product ID",
-                                        "width":"8em",
-                                        "type":"number"
+                                        "id" : "ProductID",
+                                        "caption" : "Product ID",
+                                        "width" : "8em",
+                                        "type" : "number"
                                     },
                                     {
-                                        "id":"ProductName",
-                                        "caption":"Product Name",
-                                        "width":"12em",
-                                        "type":"input"
+                                        "id" : "ProductName",
+                                        "caption" : "Product Name",
+                                        "width" : "12em",
+                                        "type" : "input"
                                     },
                                     {
-                                        "id":"UnitPrice",
-                                        "caption":"Unit Price",
-                                        "width":"6em",
-                                        "type":"currency"
+                                        "id" : "UnitPrice",
+                                        "caption" : "Unit Price",
+                                        "width" : "6em",
+                                        "type" : "currency"
                                     },
                                     {
-                                        "id":"InStock",
-                                        "caption":"In Stock",
-                                        "width":"6em",
-                                        "type":"checkbox"
+                                        "id" : "InStock",
+                                        "caption" : "In Stock",
+                                        "width" : "6em",
+                                        "type" : "checkbox"
                                     }
                                 ],
-                                "uidColumn":"ProductID"
+                                "uidColumn" : "ProductID"
                             }
                         }
                     }
                 })
                 .setEvents({
-                    "onListRecords":[
+                    "onListRecords" : [
                         {
-                            "desc":"set page",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set page",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.page"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"set size",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[
-                                "{page.api_list.setQueryData()}",
+                            "desc" : "set size",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [
+                                "{page.api_list.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[1]}",
                                 "paras.size"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call",
-                            "type":"control",
-                            "target":"api_list",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call",
+                            "type" : "control",
+                            "target" : "api_list",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"if ok, callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "if ok, callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[2]()}",
                                 undefined,
                                 undefined,
                                 "{temp.okData.data}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onOpenRecord":[
+                    "onOpenRecord" : [
                         {
-                            "desc":"postMessage",
-                            "type":"page",
-                            "target":"App.product",
-                            "args":[
+                            "desc" : "postMessage",
+                            "type" : "page",
+                            "target" : "App.product",
+                            "args" : [
                                 "{page.postMessage()}",
                                 undefined,
                                 undefined,
                                 "set",
                                 "{args[0]}"
                             ],
-                            "method":"postMessage",
-                            "redirection":"page::"
+                            "method" : "postMessage",
+                            "redirection" : "page::"
                         },
                         {
-                            "desc":"show",
-                            "type":"page",
-                            "target":"App.product",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "show",
+                            "type" : "page",
+                            "target" : "App.product",
+                            "args" : [ ],
+                            "method" : "show"
                         }
                     ],
-                    "onDeleteRecords":[
+                    "onDeleteRecords" : [
                         {
-                            "desc":"set api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[
-                                "{page.api_del.setQueryData()}",
+                            "desc" : "set api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [
+                                "{page.api_del.setQueryArgs()}",
                                 undefined,
                                 undefined,
                                 "{args[0]}",
                                 "paras.ids"
                             ],
-                            "method":"setQueryData",
-                            "redirection":"other:callback:call"
+                            "method" : "setQueryArgs",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"call api",
-                            "type":"control",
-                            "target":"api_del",
-                            "args":[ ],
-                            "method":"invoke",
-                            "onOK":0,
-                            "onKO":1
+                            "desc" : "call api",
+                            "type" : "control",
+                            "target" : "api_del",
+                            "args" : [ ],
+                            "method" : "invoke",
+                            "onOK" : 0,
+                            "onKO" : 1
                         },
                         {
-                            "desc":"callback",
-                            "type":"other",
-                            "target":"callback",
-                            "args":[
+                            "desc" : "callback",
+                            "type" : "other",
+                            "target" : "callback",
+                            "args" : [
                                 "{args[1]()}"
                             ],
-                            "method":"call",
-                            "conditions":[
+                            "method" : "call",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.okData.data}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.okData.data}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
                     ],
-                    "onCreateRecords":[
+                    "onCreateRecords" : [
                         {
-                            "desc":"postmessage",
-                            "type":"page",
-                            "target":"App.product",
-                            "args":[
+                            "desc" : "postmessage",
+                            "type" : "page",
+                            "target" : "App.product",
+                            "args" : [
                                 "{page.postMessage()}",
                                 undefined,
                                 undefined,
                                 "create"
                             ],
-                            "method":"postMessage",
-                            "redirection":"page::"
+                            "method" : "postMessage",
+                            "redirection" : "page::"
                         },
                         {
-                            "desc":"crete order",
-                            "type":"page",
-                            "target":"App.product",
-                            "args":[ ],
-                            "method":"show"
+                            "desc" : "crete order",
+                            "type" : "page",
+                            "target" : "App.product",
+                            "args" : [ ],
+                            "method" : "show"
                         }
                     ],
-                    "onSelectRecord":[
+                    "onSelectRecord" : [
                         {
-                            "desc":"callback",
-                            "type":"control",
-                            "target":"xui_msgsvr",
-                            "args":[
+                            "desc" : "callback",
+                            "type" : "control",
+                            "target" : "xui_msgsvr",
+                            "args" : [
                                 "{page.xui_msgsvr.broadcast()}",
                                 undefined,
                                 undefined,
@@ -264,19 +259,19 @@ xui.Class('App.products', 'xui.Module',{
                                 "{args[1]}",
                                 "{args[2]}"
                             ],
-                            "method":"broadcast",
-                            "redirection":"other:callback:call"
+                            "method" : "broadcast",
+                            "redirection" : "other:callback:call"
                         },
                         {
-                            "desc":"close",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy"
+                            "desc" : "close",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy"
                         }
                     ]
                 })
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -287,15 +282,20 @@ xui.Class('App.products', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"destroy",
-                        "type":"page",
-                        "target":"App.products",
-                        "args":[ ],
-                        "method":"destroy",
-                        "event":1
+                        "desc" : "destroy",
+                        "type" : "page",
+                        "target" : "App.products",
+                        "args" : [ ],
+                        "method" : "destroy",
+                        "event" : 1
                     }
                 ])
-                );
+            );
+            
+            append(
+                xui.create("xui.MessageService")
+                .setHost(host,"xui_msgsvr")
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio

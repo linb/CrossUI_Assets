@@ -9,20 +9,20 @@ xui.Class('App.companyInfo', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_get")
-                .setName("api_get")
-                .setQueryURL("{xui.constant.request_url}")
                 .setResponseDataTarget([
                     {
-                        "type":"form",
-                        "name":"form1",
-                        "path":"data"
+                        "type" : "form",
+                        "name" : "form1",
+                        "path" : "data"
                     }
                 ])
+                .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"companyinfo",
-                    "paras":{
-                        "SetupID":1,
-                        "action":"get"
+                    "key" : "companyinfo",
+                    "paras" : {
+                        "SetupID" : 1,
+                        "action" : "get"
                     }
                 })
             );
@@ -30,13 +30,13 @@ xui.Class('App.companyInfo', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_set")
-                .setName("api_set")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"companyinfo",
-                    "paras":{
-                        "SetupID":1,
-                        "action":"set"
+                    "key" : "companyinfo",
+                    "paras" : {
+                        "SetupID" : 1,
+                        "action" : "set"
                     }
                 })
             );
@@ -57,54 +57,54 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setModal(true)
                 .setOverflow("hidden")
                 .beforeClose({
-                    "return":"{false}",
-                    "actions":[
+                    "return" : "{false}",
+                    "actions" : [
                         {
-                            "desc":"close it",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "close it",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{page.form1.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{false}"
+                                    "left" : "{page.form1.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{false}"
                                 }
                             ],
-                            "return":false
+                            "return" : false
                         },
                         {
-                            "desc":"confirm",
-                            "type":"other",
-                            "target":"msg",
-                            "args":[
+                            "desc" : "confirm",
+                            "type" : "other",
+                            "target" : "msg",
+                            "args" : [
                                 "Confirm",
                                 "Do you consider to save the changes you have made first?"
                             ],
-                            "method":"confirm",
-                            "conditions":[
+                            "method" : "confirm",
+                            "conditions" : [
                                 {
-                                    "left":"{page.form1.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{true}"
+                                    "left" : "{page.form1.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{true}"
                                 }
                             ],
-                            "return":false,
-                            "onOK":2,
-                            "onKO":3
+                            "return" : false,
+                            "onOK" : 2,
+                            "onKO" : 3
                         },
                         {
-                            "desc":"confirm-no: close",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "confirm-no: close",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.koData}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.koData}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
@@ -122,7 +122,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setBorderType("inset")
                 .setFormTarget("api_set")
                 .setFormDataPath("paras.fields")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -130,7 +130,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("1.1666666666666667em")
                 .setCaption("Company Name")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -138,7 +138,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("17.5em")
                 .setTop("3.6666666666666665em")
                 .setCaption("Address")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -146,7 +146,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("6.166666666666667em")
                 .setCaption("State/Province")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -154,7 +154,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("8.666666666666666em")
                 .setCaption("Postal Code")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -162,7 +162,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("11.166666666666666em")
                 .setCaption("Phone Number")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -170,7 +170,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("13.666666666666666em")
                 .setCaption("Fax Number")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -181,7 +181,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setWidth("27.5em")
                 .setTipsErr("Required")
                 .setValueFormat("[^.*]")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -192,7 +192,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setWidth("14.166666666666666em")
                 .setHeight("11.666666666666666em")
                 .setMultiLines(true)
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -201,7 +201,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("3.3333333333333335em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -210,7 +210,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("5.833333333333333em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -220,7 +220,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setTop("8.333333333333334em")
                 .setWidth("7.5em")
                 .setMask("1111-11111")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -230,7 +230,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setTop("10.833333333333334em")
                 .setWidth("7.5em")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Input")
@@ -240,7 +240,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setTop("13.333333333333334em")
                 .setWidth("7.5em")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.form1.append(
                 xui.create("xui.UI.Label")
@@ -248,7 +248,7 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("3.6666666666666665em")
                 .setCaption("City")
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -260,35 +260,35 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setCaption("Save")
                 .onClick([
                     {
-                        "desc":"check",
-                        "type":"other",
-                        "target":"msg",
-                        "args":[
+                        "desc" : "check",
+                        "type" : "other",
+                        "target" : "msg",
+                        "args" : [
                             "There are no modified fields",
                             "No modified",
                             200,
                             5000
                         ],
-                        "method":"message",
-                        "conditions":[
+                        "method" : "message",
+                        "conditions" : [
                             {
-                                "left":"{page.form1.isDirtied()}",
-                                "symbol":"!=",
-                                "right":"{true}"
+                                "left" : "{page.form1.isDirtied()}",
+                                "symbol" : "!=",
+                                "right" : "{true}"
                             }
                         ],
-                        "return":false,
-                        "event":1
+                        "return" : false,
+                        "event" : 1
                     },
                     {
-                        "desc":"submit form",
-                        "type":"control",
-                        "target":"form1",
-                        "args":[ ],
-                        "method":"formSubmit"
+                        "desc" : "submit form",
+                        "type" : "control",
+                        "target" : "form1",
+                        "args" : [ ],
+                        "method" : "formSubmit"
                     }
                 ])
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -299,15 +299,15 @@ xui.Class('App.companyInfo', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"close",
-                        "type":"control",
-                        "target":"mainDlg",
-                        "args":[ ],
-                        "method":"close",
-                        "event":1
+                        "desc" : "close",
+                        "type" : "control",
+                        "target" : "mainDlg",
+                        "args" : [ ],
+                        "method" : "close",
+                        "event" : 1
                     }
                 ])
-                );
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio

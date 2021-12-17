@@ -10,13 +10,13 @@ xui.Class('App.customer', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_get")
-                .setName("api_get")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"customers",
-                    "paras":{
-                        "CustomerID":"xxx",
-                        "action":"get"
+                    "key" : "customers",
+                    "paras" : {
+                        "CustomerID" : "xxx",
+                        "action" : "get"
                     }
                 })
             );
@@ -24,13 +24,13 @@ xui.Class('App.customer', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_set")
-                .setName("api_set")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"customers",
-                    "paras":{
-                        "CustomerID":"xxx",
-                        "action":"set"
+                    "key" : "customers",
+                    "paras" : {
+                        "CustomerID" : "xxx",
+                        "action" : "set"
                     }
                 })
             );
@@ -38,19 +38,14 @@ xui.Class('App.customer', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_new")
-                .setName("api_new")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"customers",
-                    "paras":{
-                        "action":"create"
+                    "key" : "customers",
+                    "paras" : {
+                        "action" : "create"
                     }
                 })
-            );
-            
-            append(
-                xui.create("xui.MessageService")
-                .setHost(host,"xui_msgsvr")
             );
             
             append(
@@ -69,54 +64,54 @@ xui.Class('App.customer', 'xui.Module',{
                 .setModal(true)
                 .setOverflow("hidden")
                 .beforeClose({
-                    "return":"{false}",
-                    "actions":[
+                    "return" : "{false}",
+                    "actions" : [
                         {
-                            "desc":"close it",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "close it",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{page.ctl_form.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{false}"
+                                    "left" : "{page.ctl_form.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{false}"
                                 }
                             ],
-                            "return":false
+                            "return" : false
                         },
                         {
-                            "desc":"confirm",
-                            "type":"other",
-                            "target":"msg",
-                            "args":[
+                            "desc" : "confirm",
+                            "type" : "other",
+                            "target" : "msg",
+                            "args" : [
                                 "Confirm",
                                 "Do you consider to save the changes you have made first?"
                             ],
-                            "method":"confirm",
-                            "conditions":[
+                            "method" : "confirm",
+                            "conditions" : [
                                 {
-                                    "left":"{page.ctl_form.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{true}"
+                                    "left" : "{page.ctl_form.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{true}"
                                 }
                             ],
-                            "return":false,
-                            "onOK":2,
-                            "onKO":3
+                            "return" : false,
+                            "onOK" : 2,
+                            "onKO" : 3
                         },
                         {
-                            "desc":"confirm-no: close",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "confirm-no: close",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.koData}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.koData}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
@@ -133,7 +128,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setHeight("31.666666666666668em")
                 .setBorderType("inset")
                 .setOverflow("visible")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -141,7 +136,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("1.1666666666666667em")
                 .setCaption("Company Name")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -149,7 +144,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("29.166666666666668em")
                 .setTop("9.166666666666666em")
                 .setCaption("Notes")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -160,7 +155,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("28.333333333333332em")
                 .setHeight("20em")
                 .setMultiLines(true)
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.ComboInput")
@@ -172,7 +167,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTipsErr("Required")
                 .setValueFormat("[^.*]")
                 .setType("input")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -180,7 +175,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("3.6666666666666665em")
                 .setCaption("First Name")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.ComboInput")
@@ -190,7 +185,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("9.166666666666666em")
                 .setType("input")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -198,7 +193,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("21.666666666666668em")
                 .setTop("3.6666666666666665em")
                 .setCaption("Last Name")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.ComboInput")
@@ -208,7 +203,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("9.166666666666666em")
                 .setType("input")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -216,7 +211,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("6.166666666666667em")
                 .setCaption("Email")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -224,7 +219,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("33.333333333333336em")
                 .setTop("6.166666666666667em")
                 .setCaption("Website")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.ComboInput")
@@ -235,7 +230,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("19.166666666666668em")
                 .setType("popbox")
                 .beforeComboPop("_ctl_comboinput114_beforecombopop")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -243,7 +238,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("41.666666666666664em")
                 .setTop("1.1666666666666667em")
                 .setCaption("Phone Number")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -254,7 +249,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("8.333333333333334em")
                 .setValueFormat("[^.*]")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -262,7 +257,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("41.666666666666664em")
                 .setTop("3.6666666666666665em")
                 .setCaption("Fax Number")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -272,7 +267,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("8.333333333333334em")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -280,7 +275,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("9.166666666666666em")
                 .setCaption("State/Province")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -288,7 +283,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("18.333333333333332em")
                 .setTop("9.166666666666666em")
                 .setCaption("Postal Code")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -297,7 +292,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("10.833333333333334em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -306,7 +301,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("10.833333333333334em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -316,7 +311,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("10.833333333333334em")
                 .setWidth("7.5em")
                 .setMask("1111-11111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -324,7 +319,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("9.166666666666666em")
                 .setCaption("City")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Block")
@@ -334,7 +329,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("53.333333333333336em")
                 .setHeight("0.16666666666666666em")
                 .setBorderType("inset")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -342,7 +337,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("13.333333333333334em")
                 .setCaption("Billing Adress")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -353,7 +348,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("25em")
                 .setHeight("3.3333333333333335em")
                 .setMultiLines(true)
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -361,7 +356,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("19.166666666666668em")
                 .setCaption("State/Province")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -369,7 +364,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("18.333333333333332em")
                 .setTop("19.166666666666668em")
                 .setCaption("Postal Code")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -378,7 +373,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("20.833333333333332em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -387,7 +382,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("9.166666666666666em")
                 .setTop("20.833333333333332em")
                 .setWidth("7.5em")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -397,7 +392,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("20.833333333333332em")
                 .setWidth("7.5em")
                 .setMask("1111-11111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -405,7 +400,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("19.166666666666668em")
                 .setCaption("Ship City")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -413,7 +408,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("23.333333333333332em")
                 .setCaption("Shipping Adress")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -424,7 +419,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("25em")
                 .setHeight("3.3333333333333335em")
                 .setMultiLines(true)
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -432,7 +427,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setLeft("5em")
                 .setTop("29.5em")
                 .setCaption("Shipping Phone Number")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -442,7 +437,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setTop("29.166666666666668em")
                 .setWidth("8.333333333333334em")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.ComboInput")
@@ -453,7 +448,7 @@ xui.Class('App.customer', 'xui.Module',{
                 .setWidth("20em")
                 .setType("popbox")
                 .beforeComboPop("_ctl_comboinput113_beforecombopop")
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -465,89 +460,89 @@ xui.Class('App.customer', 'xui.Module',{
                 .setCaption("Save")
                 .onClick([
                     {
-                        "desc":"check",
-                        "type":"other",
-                        "target":"msg",
-                        "args":[
+                        "desc" : "check",
+                        "type" : "other",
+                        "target" : "msg",
+                        "args" : [
                             "No change",
                             "No change"
                         ],
-                        "method":"pop",
-                        "conditions":[
+                        "method" : "pop",
+                        "conditions" : [
                             {
-                                "left":"{page.ctl_form.isDirtied()}",
-                                "symbol":"=",
-                                "right":"{false}"
+                                "left" : "{page.ctl_form.isDirtied()}",
+                                "symbol" : "=",
+                                "right" : "{false}"
                             }
                         ],
-                        "event":1,
-                        "return":false
+                        "event" : 1,
+                        "return" : false
                     },
                     {
-                        "desc":"update - set api id",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[
-                            "{page.api_set.setQueryData()}",
+                        "desc" : "update - set api id",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [
+                            "{page.api_set.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.properties.recordId}",
                             "paras.CustomerID"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update - set api fields",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[
-                            "{page.api_set.setQueryData()}",
+                        "desc" : "update - set api fields",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [
+                            "{page.api_set.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.ctl_form.getFormValues(true)}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update - call api",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[ ],
-                        "method":"invoke",
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "conditions":[
+                        "desc" : "update - call api",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ],
-                        "onOK":0,
-                        "onKO":1
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"update - msg",
-                        "type":"control",
-                        "target":"xui_msgsvr",
-                        "args":[
+                        "desc" : "update - msg",
+                        "type" : "control",
+                        "target" : "xui_msgsvr",
+                        "args" : [
                             "{page.xui_msgsvr.broadcast()}",
                             undefined,
                             undefined,
@@ -556,67 +551,67 @@ xui.Class('App.customer', 'xui.Module',{
                             "{page.properties.recordId}",
                             "{page.ctl_form.getFormValues(true)}"
                         ],
-                        "method":"broadcast",
-                        "conditions":[
+                        "method" : "broadcast",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"create - set api fields",
-                        "type":"control",
-                        "target":"api_new",
-                        "args":[
-                            "{page.api_new.setQueryData()}",
+                        "desc" : "create - set api fields",
+                        "type" : "control",
+                        "target" : "api_new",
+                        "args" : [
+                            "{page.api_new.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.ctl_form.getFormValues(true)}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             }
                         ],
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "redirection":"other:callback:call"
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"create - call api",
-                        "type":"control",
-                        "target":"api_new",
-                        "args":[ ],
-                        "method":"invoke",
-                        "conditions":[
+                        "desc" : "create - call api",
+                        "type" : "control",
+                        "target" : "api_new",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             }
                         ],
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "onOK":0,
-                        "onKO":1
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"create -  msg",
-                        "type":"control",
-                        "target":"xui_msgsvr",
-                        "args":[
+                        "desc" : "create -  msg",
+                        "type" : "control",
+                        "target" : "xui_msgsvr",
+                        "args" : [
                             "{page.xui_msgsvr.broadcast()}",
                             undefined,
                             undefined,
@@ -625,60 +620,60 @@ xui.Class('App.customer', 'xui.Module',{
                             "",
                             "{temp.okData.data}"
                         ],
-                        "method":"broadcast",
-                        "conditions":[
+                        "method" : "broadcast",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ],
-                        "redirection":"other:callback:call"
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"create -set id",
-                        "type":"page",
-                        "target":"App.customer",
-                        "args":[
+                        "desc" : "create -set id",
+                        "type" : "page",
+                        "target" : "App.customer",
+                        "args" : [
                             {
-                                "recordId":"{temp.okData.data.CustomerID}"
+                                "recordId" : "{temp.okData.data.CustomerID}"
                             }
                         ],
-                        "method":"setProperties",
-                        "conditions":[
+                        "method" : "setProperties",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update form",
-                        "type":"control",
-                        "target":"ctl_form",
-                        "args":[ ],
-                        "method":"updateFormValues",
-                        "conditions":[
+                        "desc" : "update form",
+                        "type" : "control",
+                        "target" : "ctl_form",
+                        "args" : [ ],
+                        "method" : "updateFormValues",
+                        "conditions" : [
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     }
                 ])
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -690,15 +685,20 @@ xui.Class('App.customer', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"Action 1",
-                        "type":"control",
-                        "target":"mainDlg",
-                        "args":[ ],
-                        "method":"close",
-                        "event":1
+                        "desc" : "Action 1",
+                        "type" : "control",
+                        "target" : "mainDlg",
+                        "args" : [ ],
+                        "method" : "close",
+                        "event" : 1
                     }
                 ])
-                );
+            );
+            
+            append(
+                xui.create("xui.MessageService")
+                .setHost(host,"xui_msgsvr")
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio
@@ -710,13 +710,13 @@ xui.Class('App.customer', 'xui.Module',{
                     "type":"control",
                     "target":"api_get",
                     "args":[
-                        "{page.api_get.setQueryData()}",
+                        "{page.api_get.setQueryArgs()}",
                         undefined,
                         undefined,
                         "{page.properties.recordId}",
                         "paras.CustomerID"
                     ],
-                    "method":"setQueryData",
+                    "method":"setQueryArgs",
                     "redirection":"other:callback:call",
                     "conditions":[
                         {

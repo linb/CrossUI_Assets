@@ -10,13 +10,13 @@ xui.Class('App.employee', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_get")
-                .setName("api_get")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"employees",
-                    "paras":{
-                        "EmployeeID":"xxx",
-                        "action":"get"
+                    "key" : "employees",
+                    "paras" : {
+                        "EmployeeID" : "xxx",
+                        "action" : "get"
                     }
                 })
             );
@@ -24,13 +24,13 @@ xui.Class('App.employee', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_set")
-                .setName("api_set")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"employees",
-                    "paras":{
-                        "EmployeeID":"xxx",
-                        "action":"set"
+                    "key" : "employees",
+                    "paras" : {
+                        "EmployeeID" : "xxx",
+                        "action" : "set"
                     }
                 })
             );
@@ -38,12 +38,12 @@ xui.Class('App.employee', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_new")
-                .setName("api_new")
                 .setQueryURL("{xui.constant.request_url}")
+                .setProxyType("auto")
                 .setQueryArgs({
-                    "key":"employees",
-                    "paras":{
-                        "action":"create"
+                    "key" : "employees",
+                    "paras" : {
+                        "action" : "create"
                     }
                 })
             );
@@ -64,54 +64,54 @@ xui.Class('App.employee', 'xui.Module',{
                 .setModal(true)
                 .setOverflow("hidden")
                 .beforeClose({
-                    "return":"{false}",
-                    "actions":[
+                    "return" : "{false}",
+                    "actions" : [
                         {
-                            "desc":"close it",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "close it",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{page.ctl_form.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{false}"
+                                    "left" : "{page.ctl_form.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{false}"
                                 }
                             ],
-                            "return":false
+                            "return" : false
                         },
                         {
-                            "desc":"confirm",
-                            "type":"other",
-                            "target":"msg",
-                            "args":[
+                            "desc" : "confirm",
+                            "type" : "other",
+                            "target" : "msg",
+                            "args" : [
                                 "Confirm",
                                 "Do you consider to save the changes you have made first?"
                             ],
-                            "method":"confirm",
-                            "conditions":[
+                            "method" : "confirm",
+                            "conditions" : [
                                 {
-                                    "left":"{page.ctl_form.isDirtied()}",
-                                    "symbol":"=",
-                                    "right":"{true}"
+                                    "left" : "{page.ctl_form.isDirtied()}",
+                                    "symbol" : "=",
+                                    "right" : "{true}"
                                 }
                             ],
-                            "return":false,
-                            "onOK":2,
-                            "onKO":3
+                            "return" : false,
+                            "onOK" : 2,
+                            "onKO" : 3
                         },
                         {
-                            "desc":"confirm-no: close",
-                            "type":"control",
-                            "target":"mainDlg",
-                            "args":[ ],
-                            "method":"destroy",
-                            "conditions":[
+                            "desc" : "confirm-no: close",
+                            "type" : "control",
+                            "target" : "mainDlg",
+                            "args" : [ ],
+                            "method" : "destroy",
+                            "conditions" : [
                                 {
-                                    "left":"{temp.koData}",
-                                    "symbol":"non-empty",
-                                    "right":""
+                                    "left" : "{temp.koData}",
+                                    "symbol" : "non-empty",
+                                    "right" : ""
                                 }
                             ]
                         }
@@ -127,7 +127,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setWidth("38.333333333333336em")
                 .setHeight("6.666666666666667em")
                 .setBorderType("inset")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -135,7 +135,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("1.1666666666666667em")
                 .setCaption("First Name")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -143,7 +143,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setLeft("0.8333333333333334em")
                 .setTop("3.6666666666666665em")
                 .setCaption("Title")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -151,7 +151,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setLeft("20em")
                 .setTop("3.6666666666666665em")
                 .setCaption("Work Phone")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -162,7 +162,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setWidth("9.166666666666666em")
                 .setTipsErr("Required")
                 .setValueFormat("[^.*]")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -173,7 +173,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setWidth("9.166666666666666em")
                 .setTipsErr("Required")
                 .setValueFormat("[^.*]")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -184,7 +184,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setWidth("9.166666666666666em")
                 .setTipsErr("Required")
                 .setValueFormat("[^.*]")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Input")
@@ -194,7 +194,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("9.166666666666666em")
                 .setMask("(111)111-1111")
-                );
+            );
             
             host.ctl_form.append(
                 xui.create("xui.UI.Label")
@@ -202,7 +202,7 @@ xui.Class('App.employee', 'xui.Module',{
                 .setLeft("20em")
                 .setTop("1.1666666666666667em")
                 .setCaption("Last Name")
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -214,89 +214,89 @@ xui.Class('App.employee', 'xui.Module',{
                 .setCaption("Save")
                 .onClick([
                     {
-                        "desc":"check",
-                        "type":"other",
-                        "target":"msg",
-                        "args":[
+                        "desc" : "check",
+                        "type" : "other",
+                        "target" : "msg",
+                        "args" : [
                             "No change",
                             "No change"
                         ],
-                        "method":"pop",
-                        "conditions":[
+                        "method" : "pop",
+                        "conditions" : [
                             {
-                                "left":"{page.ctl_form.isDirtied()}",
-                                "symbol":"=",
-                                "right":"{false}"
+                                "left" : "{page.ctl_form.isDirtied()}",
+                                "symbol" : "=",
+                                "right" : "{false}"
                             }
                         ],
-                        "event":1,
-                        "return":false
+                        "event" : 1,
+                        "return" : false
                     },
                     {
-                        "desc":"update - set api id",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[
-                            "{page.api_set.setQueryData()}",
+                        "desc" : "update - set api id",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [
+                            "{page.api_set.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.properties.recordId}",
                             "paras.EmployeeID"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update - set api fields",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[
-                            "{page.api_set.setQueryData()}",
+                        "desc" : "update - set api fields",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [
+                            "{page.api_set.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.ctl_form.getFormValues(true)}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "redirection":"other:callback:call",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "redirection" : "other:callback:call",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update - call api",
-                        "type":"control",
-                        "target":"api_set",
-                        "args":[ ],
-                        "method":"invoke",
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "conditions":[
+                        "desc" : "update - call api",
+                        "type" : "control",
+                        "target" : "api_set",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ],
-                        "onOK":0,
-                        "onKO":1
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"update - set back to grid",
-                        "type":"page",
-                        "target":"App.employee",
-                        "args":[
+                        "desc" : "update - set back to grid",
+                        "type" : "page",
+                        "target" : "App.employee",
+                        "args" : [
                             "{page.notifyHooks()}",
                             undefined,
                             undefined,
@@ -304,67 +304,67 @@ xui.Class('App.employee', 'xui.Module',{
                             "{page.properties.recordId}",
                             "{page.ctl_form.getFormValues(true)}"
                         ],
-                        "method":"notifyHooks",
-                        "redirection":"page::",
-                        "conditions":[
+                        "method" : "notifyHooks",
+                        "redirection" : "page::",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "defined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"create - set api fields",
-                        "type":"control",
-                        "target":"api_new",
-                        "args":[
-                            "{page.api_new.setQueryData()}",
+                        "desc" : "create - set api fields",
+                        "type" : "control",
+                        "target" : "api_new",
+                        "args" : [
+                            "{page.api_new.setQueryArgs()}",
                             undefined,
                             undefined,
                             "{page.ctl_form.getFormValues(true)}",
                             "paras.fields"
                         ],
-                        "method":"setQueryData",
-                        "conditions":[
+                        "method" : "setQueryArgs",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             }
                         ],
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "redirection":"other:callback:call"
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "redirection" : "other:callback:call"
                     },
                     {
-                        "desc":"create - call api",
-                        "type":"control",
-                        "target":"api_new",
-                        "args":[ ],
-                        "method":"invoke",
-                        "conditions":[
+                        "desc" : "create - call api",
+                        "type" : "control",
+                        "target" : "api_new",
+                        "args" : [ ],
+                        "method" : "invoke",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             }
                         ],
-                        "okFlag":"_DI_succeed",
-                        "koFlag":"_DI_fail",
-                        "onOK":0,
-                        "onKO":1
+                        "okFlag" : "_DI_succeed",
+                        "koFlag" : "_DI_fail",
+                        "onOK" : 0,
+                        "onKO" : 1
                     },
                     {
-                        "desc":"create - set back to grid",
-                        "type":"page",
-                        "target":"App.employee",
-                        "args":[
+                        "desc" : "create - set back to grid",
+                        "type" : "page",
+                        "target" : "App.employee",
+                        "args" : [
                             "{page.notifyHooks()}",
                             undefined,
                             undefined,
@@ -372,60 +372,60 @@ xui.Class('App.employee', 'xui.Module',{
                             undefined,
                             "{temp.okData.data}"
                         ],
-                        "method":"notifyHooks",
-                        "redirection":"page::",
-                        "conditions":[
+                        "method" : "notifyHooks",
+                        "redirection" : "page::",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"create -set id",
-                        "type":"page",
-                        "target":"App.employee",
-                        "args":[
+                        "desc" : "create -set id",
+                        "type" : "page",
+                        "target" : "App.employee",
+                        "args" : [
                             {
-                                "recordId":"{temp.okData.data.EmployeeID}"
+                                "recordId" : "{temp.okData.data.EmployeeID}"
                             }
                         ],
-                        "method":"setProperties",
-                        "conditions":[
+                        "method" : "setProperties",
+                        "conditions" : [
                             {
-                                "left":"{page.properties.recordId}",
-                                "symbol":"undefined",
-                                "right":""
+                                "left" : "{page.properties.recordId}",
+                                "symbol" : "undefined",
+                                "right" : ""
                             },
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     },
                     {
-                        "desc":"update form",
-                        "type":"control",
-                        "target":"ctl_form",
-                        "args":[ ],
-                        "method":"updateFormValues",
-                        "conditions":[
+                        "desc" : "update form",
+                        "type" : "control",
+                        "target" : "ctl_form",
+                        "args" : [ ],
+                        "method" : "updateFormValues",
+                        "conditions" : [
                             {
-                                "left":"{temp.okData.data}",
-                                "symbol":"defined",
-                                "right":""
+                                "left" : "{temp.okData.data}",
+                                "symbol" : "defined",
+                                "right" : ""
                             }
                         ]
                     }
                 ])
-                );
+            );
             
             host.mainDlg.append(
                 xui.create("xui.UI.Button")
@@ -437,15 +437,15 @@ xui.Class('App.employee', 'xui.Module',{
                 .setCaption("Close")
                 .onClick([
                     {
-                        "desc":"Action 1",
-                        "type":"control",
-                        "target":"mainDlg",
-                        "args":[ ],
-                        "method":"close",
-                        "event":1
+                        "desc" : "Action 1",
+                        "type" : "control",
+                        "target" : "mainDlg",
+                        "args" : [ ],
+                        "method" : "close",
+                        "event" : 1
                     }
                 ])
-                );
+            );
             
             return children;
             // ]]Code created by CrossUI RAD Studio
@@ -457,13 +457,13 @@ xui.Class('App.employee', 'xui.Module',{
                     "type":"control",
                     "target":"api_get",
                     "args":[
-                        "{page.api_get.setQueryData()}",
+                        "{page.api_get.setQueryArgs()}",
                         undefined,
                         undefined,
                         "{page.properties.recordId}",
                         "paras.EmployeeID"
                     ],
-                    "method":"setQueryData",
+                    "method":"setQueryArgs",
                     "redirection":"other:callback:call",
                     "conditions":[
                         {
