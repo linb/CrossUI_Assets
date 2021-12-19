@@ -10,8 +10,8 @@ xui.Class('App.order', 'xui.Module',{
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_get")
+                .setName("api_get")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "orders",
                     "paras" : {
@@ -19,13 +19,14 @@ xui.Class('App.order', 'xui.Module',{
                         "action" : "get"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_set")
+                .setName("api_set")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "orders",
                     "paras" : {
@@ -33,45 +34,49 @@ xui.Class('App.order', 'xui.Module',{
                         "action" : "set"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_new")
+                .setName("api_new")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "orders",
                     "paras" : {
                         "action" : "create"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_shipping")
+                .setName("api_shipping")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "shippingmethods",
                     "paras" : {
                         "action" : "getList"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
                 xui.create("xui.APICaller")
                 .setHost(host,"api_payment")
+                .setName("api_payment")
                 .setQueryURL("{xui.constant.request_url}")
-                .setProxyType("auto")
                 .setQueryArgs({
                     "key" : "paymentmethods",
                     "paras" : {
                         "action" : "getList"
                     }
                 })
+                .setProxyType("auto")
             );
             
             append(
@@ -121,7 +126,6 @@ xui.Class('App.order', 'xui.Module',{
                                 "Do you consider to save the changes you have made first?"
                             ],
                             "method" : "confirm",
-                            "return" : false,
                             "okFlag" : "_confirm_yes",
                             "koFlag" : "_confirm_no",
                             "onOK" : 2,
